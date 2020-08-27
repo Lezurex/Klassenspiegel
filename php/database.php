@@ -9,10 +9,10 @@ $connection = mysqli_connect($host, $username, $password, $database);
 
 function queryEntryFromTable($table, $row, $search_row, $search_value) {
     global $connection;
-    $sql = "SELECT * FROM $table WHERE $search_row = $search_value";
+    $sql = "SELECT $row FROM $table WHERE $search_row = $search_value";
     $result = mysqli_query($connection, $sql);
 
-    if(!$result) {
+    if(mysqli_num_rows($result) == 0) {
         return null;
     }
 
@@ -26,7 +26,7 @@ function queryEntriesFromTable($table, $search_row, $search_value) {
     $sql = "SELECT * FROM $table WHERE $search_row = $search_value";
     $result = mysqli_query($connection, $sql);
 
-    if(mysqli_num_rows($result) == 0) {
+    if(!mysqli_fetch_row($result)) {
         return null;
     }
     while($row = mysqli_fetch_assoc($result)) {

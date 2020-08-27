@@ -5,14 +5,18 @@ include "database.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if($result = queryEntryFromTable("users", "email", "email", $email) == null) {
+if(is_null($result = queryEntryFromTable("users", "email", "email", $email))) {
+    echo $result;
     echo "901";
     exit();
 }
 
+echo "sas $result";
+
 $result = queryEntryFromTable("users", "password", "email",  $email);
+echo $result;
 if(!passwordVerify($password, $result)) {
-    echo "901";
+    echo "902";
     exit();
 }
 
@@ -20,4 +24,4 @@ session_start();
 
 $_SESSION['email'] = $email;
 
-echo "900";
+echo "200";

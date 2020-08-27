@@ -5,19 +5,18 @@ include "database.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if($result = queryEntryFromTable("users", "email", "email", $email) == $email) {
+if(!is_null($result = queryEntryFromTable("users", "email", "email", $email))) {
     echo "902";
-    exit();
-}
-
-$result = queryEntryFromTable("users", "password", "email",  $email);
-if(!passwordVerify($password, $result)) {
-    echo "901";
     exit();
 }
 
 session_start();
 
+global $connection;
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO `users`(`email`, `password`) VALUES ('$email','$hashed_password')";
+mysqli_query($connection, $sql);
+
 $_SESSION['email'] = $email;
 
-echo $result;
+echo "200";

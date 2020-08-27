@@ -44,6 +44,14 @@ $().ready(function () {
         e.preventDefault();
         $("#modal-register").modal("hide");
         $("#modal-login").modal("show");
+    });
+
+    /**
+     * Register button
+     */
+    $("#register-register-btn").click(function (e) {
+        e.preventDefault();
+        register();
     })
 });
 
@@ -86,16 +94,11 @@ function register() {
             if(data == "902") {
                 $("#register-http-error").html("Du bist schon registriert!");
             } else if(data == "200") {
-                window.location.href = "/dashboard";
+                //window.location.href = "/dashboard";
             }
         },
         error: function (xhr, status, error) {
             $("#register-http-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
         }
     });
-}
-
-function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
 }

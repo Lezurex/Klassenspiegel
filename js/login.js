@@ -12,6 +12,7 @@ $().ready(function () {
         $("#login-error").html("");
         submitChangerLogin()
     });
+
     /**
      * E-Mail validation
      */
@@ -44,6 +45,14 @@ $().ready(function () {
         e.preventDefault();
         $("#modal-login").modal("hide");
         $("#modal-register").modal("show");
+    });
+
+    /**
+     * Login button
+     */
+    $("#login-login-btn").click(function (e) {
+        e.preventDefault();
+        login();
     })
 });
 
