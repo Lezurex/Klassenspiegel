@@ -1,0 +1,13 @@
+#navbar {
+    background-color: #dadada;
+    overflow: hidden;
+}
+
+#nav-icon {
+    vertical-align: middle;
+}
+
+#btn-login {
+    float: right;
+    margin: 10px;
+}
