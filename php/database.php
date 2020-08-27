@@ -12,7 +12,7 @@ function queryEntryFromTable($table, $row, $search_row, $search_value) {
     $sql = "SELECT * FROM $table WHERE $search_row = $search_value";
     $result = mysqli_query($connection, $sql);
 
-    if(mysqli_num_rows($result) == 0) {
+    if(!$result) {
         return null;
     }
 

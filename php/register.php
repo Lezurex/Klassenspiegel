@@ -5,8 +5,8 @@ include "database.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if($result = queryEntryFromTable("users", "email", "email", $email) == null) {
-    echo "901";
+if($result = queryEntryFromTable("users", "email", "email", $email) == $email) {
+    echo "902";
     exit();
 }
 
@@ -20,4 +20,4 @@ session_start();
 
 $_SESSION['email'] = $email;
 
-echo "900";
+echo $result;
