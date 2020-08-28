@@ -104,12 +104,16 @@ foreach ($array as $key => $value) {
         <div class="card-body">
             <form>
                 <label for="edit-lastname">Nachname</label><input class="form-control" type="text" name="lastname"
+                                                                  autocomplete="family-name"
                                                                   id="edit-lastname" placeholder="Nachname"><br>
                 <label for="edit-firstname">Vorname</label><input class="form-control" type="text" name="firstname"
+                                                                  autocomplete="given-name"
                                                                   id="edit-firstname" placeholder="Vorname"><br>
                 <label for="edit-location">Wohnort</label><input class="form-control" type="text" name="location"
+                                                                 autocomplete="street-address"
                                                                  id="edit-location" placeholder="Wohnort"><br>
                 <label for="edit-phone">Handynummer</label><input class="form-control" type="text" name="phone"
+                                                                  autocomplete="tel"
                                                                   id="edit-phone"
                                                                   placeholder="Handynummer (+41 000 000 00 00)"
                                                                   pattern="^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$"><br>
@@ -124,21 +128,23 @@ foreach ($array as $key => $value) {
     </div>
     <div class="card">
         <div class="card-body">
-            <table class="table">
-                <thead>
-                <th scope="col">Nachname</th>
-                <th scope="col">Vorname</th>
-                <th scope="col">E-Mail</th>
-                <th scope="col">Wohnort</th>
-                <th scope="col">Mobil-Nr.</th>
-                <th scope="col">Arbeitgeber</th>
-                <th scope="col">Hobbys</th>
-                </thead>
+            <div class="overflow-auto">
+                <table class="table">
+                    <thead>
+                    <th scope="col">Nachname</th>
+                    <th scope="col">Vorname</th>
+                    <th scope="col">E-Mail</th>
+                    <th scope="col">Wohnort</th>
+                    <th scope="col">Mobil-Nr.</th>
+                    <th scope="col">Arbeitgeber</th>
+                    <th scope="col">Hobbys</th>
+                    </thead>
 
-                <tbody>
-                <?php echo $table; ?>
-                </tbody>
-            </table>
+                    <tbody>
+                    <?php echo $table; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
