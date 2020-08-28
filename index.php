@@ -50,11 +50,12 @@ session_start();
                 <div class="form-group">
                     <label for="login-email">E-Mail</label>
                     <input type="email" class="form-control" id="login-email"
-                           placeholder="max.mustermann@mustermail.ch">
+                           placeholder="max.mustermann@mustermail.ch" autocomplete="username">
                 </div>
                 <div class="form-group">
                     <label for="login-password">Passwort</label>
-                    <input type="password" class="form-control" id="login-password" placeholder="Passwort">
+                    <input type="password" class="form-control" id="login-password" placeholder="Passwort"
+                           autocomplete="current-password">
                     <small id="login-error" class="form-text" style="color: red;"></small>
                     <small id="login-http-error" class="form-text" style="color: red;"></small>
                 </div>
@@ -82,11 +83,13 @@ session_start();
                 <div class="form-group">
                     <label for="register-email">E-Mail</label>
                     <input type="email" class="form-control" id="register-email"
-                           placeholder="max.mustermann@mustermail.ch">
+                           placeholder="max.mustermann@mustermail.ch"
+                           autocomplete="email">
                 </div>
                 <div class="form-group">
                     <label for="register-password">Passwort</label>
-                    <input type="password" class="form-control" id="register-password" aria-describedby="register-password-hint" placeholder="Passwort">
+                    <input type="password" class="form-control" id="register-password" aria-describedby="register-password-hint"
+                           placeholder="Passwort" autocomplete="new-password">
                     <small id="register-password-hint" class="text-muted">Dein Passwort muss mindestens 8 Zeichen lang sein.</small>
                     <small id="register-error" class="form-text" style="color: red;"></small>
                     <small id="register-http-error" class="form-text" style="color: red;"></small>
