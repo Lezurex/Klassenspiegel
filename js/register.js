@@ -61,8 +61,11 @@ function submitChangerRegister() {
     } else {
         if (validateEmail($("#register-email").val())) {
             if ($("#register-password").val().length > 7) {
+                $("#register-password").removeClass("is-invalid");
+                $("#register-password").addClass("is-valid");
                 $("#register-register-btn").removeAttr("disabled");
-            }
+            } else
+                $("#register-password").addClass("is-invalid");
         }
     }
 }
@@ -94,7 +97,7 @@ function register() {
             if(data == "902") {
                 $("#register-http-error").html("Du bist schon registriert!");
             } else if(data == "200") {
-                //window.location.href = "/dashboard";
+                window.location.href = "/dashboard";
             }
         },
         error: function (xhr, status, error) {
