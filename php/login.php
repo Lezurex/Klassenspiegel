@@ -5,18 +5,14 @@ include "database.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if(is_null($result = queryEntryFromTable("users", "email", "email", $email))) {
-    echo $result;
+if(!containsEntry("users", "email", $email)) {
     echo "901";
     exit();
 }
 
-echo "sas $result";
-
 $result = queryEntryFromTable("users", "password", "email",  $email);
-echo $result;
-if(!passwordVerify($password, $result)) {
-    echo "902";
+if(!password_verify($password, $result)) {
+    echo "901";
     exit();
 }
 

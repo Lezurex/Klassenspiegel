@@ -1,13 +1,55 @@
 #navbar {
     background-color: #dadada;
     overflow: hidden;
+    box-shadow: 0 6px 5px 0 rgba(0,0,0,0.3);
 }
 
-#nav-icon {
-    vertical-align: middle;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+    padding: 8px;
+}
+
+li a {
+    display: block;
+    background-color: #dddddd;
+}
+
+#nav-title {
+    display: inline;
 }
 
 #btn-login {
     float: right;
-    margin: 10px;
+
+}
+
+.link-unstyled {
+&,
+&:visited,
+&:hover,
+&:active,
+&:focus,
+&:active:hover {
+     font-style: inherit;
+     color: inherit;
+     background-color: transparent;
+     font-size: inherit;
+     text-decoration: none;
+     font-variant: inherit;
+     font-weight: inherit;
+     line-height: inherit;
+     font-family: inherit;
+     border-radius: inherit;
+     border: inherit;
+     outline: inherit;
+     box-shadow: inherit;
+     padding: inherit;
+     vertical-align: inherit;
+ }
 }
