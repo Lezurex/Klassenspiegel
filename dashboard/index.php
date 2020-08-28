@@ -1,10 +1,11 @@
 <?php
 
 include "../php/templates.php";
+include "../php/database.php";
 
 session_start();
 
-if(!isset($_SESSION['email'])) {
+if (!isset($_SESSION['email'])) {
     header("Location: ../");
     exit();
 }
@@ -71,25 +72,77 @@ foreach ($array as $key => $value) {
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="/js/errorResolver.js"></script>
-    <script src="/js/login.js"></script>
+    <script src="/js/edit.js"></script>
 </head>
 <body>
 <?php echo getNavbar($_SESSION) ?>
 
-<table class="table" style="width:80%;margin:100px auto;">
-    <thead>
-    <th scope="col">Nachname</th>
-    <th scope="col">Vorname</th>
-    <th scope="col">E-Mail</th>
-    <th scope="col">Wohnort</th>
-    <th scope="col">Mobil-Nr.</th>
-    <th scope="col">Arbeitgeber</th>
-    <th scope="col">Hobbys</th>
-    </thead>
+<h1 class="text-center" style="margin-top: 50px;">Dashboard</h1>
+<p class="text-center"><?php
+    $hour = (int)date("H");
+    if($hour > 6 && $hour < 12) {
+        $greeting = "Guten Morgen";
+    } else if($hour > 11 && $hour < 14) {
+        $greeting = "Guten Mittag";
+    } else if($hour > 13 && $hour < 17) {
+        $greeting = "Guten Nachmittag";
+    } else if($hour > 16 && $hour < 23) {
+        $greeting = "Guten Abend";
+    } else {
+        $greeting = "Gute Nacht";
+    }
 
-    <tbody>
-    <?php echo $table; ?>
-    </tbody>
-</table>
+    $query = queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
+    if($query == "Kein Eintrag") {
+        echo "$greeting!";
+    } else
+        echo "$greeting, $query!";
+    ?></p>
+
+<div class="card-deck" style="margin: 50px auto">
+    <div class="card" id="card-edit">
+        <div class="card-body">
+            <form>
+                <label for="edit-lastname">Nachname</label><input class="form-control" type="text" name="lastname"
+                                                                  id="edit-lastname" placeholder="Nachname"><br>
+                <label for="edit-firstname">Vorname</label><input class="form-control" type="text" name="firstname"
+                                                                  id="edit-firstname" placeholder="Vorname"><br>
+                <label for="edit-location">Wohnort</label><input class="form-control" type="text" name="location"
+                                                                 id="edit-location" placeholder="Wohnort"><br>
+                <label for="edit-phone">Handynummer</label><input class="form-control" type="text" name="phone"
+                                                                  id="edit-phone"
+                                                                  placeholder="Handynummer (+41 000 000 00 00)"
+                                                                  pattern="^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$"><br>
+                <small style="color: red;" id="edit-phone-error"></small>
+                <label for="edit-company">Arbeitgeber</label><input class="form-control" type="text" name="company"
+                                                                    id="edit-company" placeholder="Arbeitgeber"><br>
+                <label for="edit-hobbys">Hobbys</label><input class="form-control" type="text" name="hobbys"
+                                                              id="edit-hobbys" placeholder="Hobbys"><br>
+                <button type="button" id="btn-edit-save" class="btn btn-success float-right">Speichern</button>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <th scope="col">Nachname</th>
+                <th scope="col">Vorname</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Wohnort</th>
+                <th scope="col">Mobil-Nr.</th>
+                <th scope="col">Arbeitgeber</th>
+                <th scope="col">Hobbys</th>
+                </thead>
+
+                <tbody>
+                <?php echo $table; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
 </body>
 
