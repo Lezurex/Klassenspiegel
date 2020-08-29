@@ -2,6 +2,7 @@
 
 include "../php/templates.php";
 include "../php/database.php";
+require "../php/database/DatabaseAdapter.php";
 
 session_start();
 
@@ -9,6 +10,8 @@ if (!isset($_SESSION['email'])) {
     header("Location: ../");
     exit();
 }
+
+$db = new DatabaseAdapter();
 
 $host = "localhost";
 $username = "root";
@@ -92,15 +95,16 @@ foreach ($array as $key => $value) {
         $greeting = "Gute Nacht";
     }
 
-    $query = queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
+    $query = $db->getStringFromTable("users", "firstname", new Key("email", $_SESSION['email'])); //queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
     if($query == "Kein Eintrag") {
         echo "$greeting!";
     } else
         echo "$greeting, $query!";
     ?></p>
 
-<div class="card-deck" style="margin: 50px auto">
+<div class="card-deck" style="margin: 50px 5%">
     <div class="card" id="card-edit">
+        <div class="card-header"><strong>Dein Eintrag in der Klassenliste</strong></div>
         <div class="card-body">
             <form>
                 <label for="edit-lastname">Nachname</label><input class="form-control" type="text" name="lastname"
@@ -127,6 +131,15 @@ foreach ($array as $key => $value) {
         </div>
     </div>
     <div class="card">
+        <div class="card-header"><strong>Accounteinstellungen</strong></div>
+        <div class="card-body">
+
+        </div>
+    </div>
+</div>
+<div class="card-deck" style="margin: 50px 5%">
+    <div class="card">
+        <div class="card-header"><strong>Klassenliste</strong></div>
         <div class="card-body">
             <div class="overflow-auto">
                 <table class="table">

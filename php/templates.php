@@ -1,13 +1,16 @@
 <?php
 
+$class_name = "AP20b";
+
 function getNavbar($session) {
+    global $class_name;
     $navbar = '<nav id="navbar">
     <ul>
         <li>
             <a href="/"><img src="https://tbz.ch/wp-content/themes/tbz/favicons/favicon.ico" alt="icon" height="40px"></a>
         </li>
         <li>
-            <a href="/" class="link-unstyled"><h3 class="h3" id="nav-title">AP20b/BIN20a</h3></a>
+            <a href="/" class="link-unstyled"><h3 class="h3" id="nav-title">'.$class_name.'</h3></a>
         <li>
         <li style="float: right">';
 
