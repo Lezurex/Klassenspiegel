@@ -5,8 +5,7 @@ require "Insert.php";
 require "Row.php";
 require "Database.php";
 
-class DatabaseAdapter
-{
+class DatabaseAdapter {
 
     public function __construct() {
         Database::connect();
@@ -273,6 +272,29 @@ class DatabaseAdapter
 
         }
         return false;
+    }
+
+    /**
+     * @param String $tablename
+     * @param Key ...$keys
+     * @return mixed mysqli_query() return value
+     */
+    public function deleteFromTable($tablename, ...$keys) {
+        $stringBuilder = "";
+        $stringBuilder .= "DELETE FROM {$tablename} WHERE";
+
+        $length = sizeof($keys);
+        if($length != 0) {
+            foreach ($keys as $key) {
+                if($length == 1) {
+                    $stringBuilder .= " " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                } else {
+                    $stringBuilder .= " " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND";
+                    $length--;
+                }
+            }
+        }
+        return $this->executeCommand($stringBuilder);
     }
 
 }
