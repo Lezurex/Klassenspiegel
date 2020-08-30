@@ -88,7 +88,7 @@ function login() {
     };
     $.ajax({
         method:"POST",
-        url:"http://klassenspiegel.test/php/login.php",
+        url:"https://" + window.location.hostname + "/php/login.php",
         data: data,
         timeout:5000,
         success: function (data) {
@@ -96,8 +96,12 @@ function login() {
                 $("#login-email").addClass("is-invalid");
                 $("#login-password").addClass("is-invalid");
                 $("#login-http-error").html("Falsche E-Mail oder falsches Passwort!");
+            } else if(data == "905") {
+                $("#login-http-error").html("Dein Konto wurde noch nicht freigeschaltet. Wende dich bei einer längeren Wartezeit an den Websiteadministrator.");
             } else if(data == "200") {
                 window.location.href = "/dashboard";
+            } else {
+                $("#login-http-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
             }
         },
         error: function (xhr, status, error) {

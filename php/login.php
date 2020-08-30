@@ -18,6 +18,11 @@ if(!password_verify($password, $result)) {
     exit();
 }
 
+if($db->getIntegerFromTable("users", "permitted", new Key("email", $email)) == 0) {
+    echo "905";
+    exit();
+}
+
 session_start();
 
 $_SESSION['email'] = $email;

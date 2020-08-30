@@ -20,7 +20,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 session_start();
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-$db->insertIntoTable("users", new Insert("email", $email), new Insert("password", $hashed_password));
+$db->insertIntoTable("users", new Insert("email", $email), new Insert("password", $hashed_password), new Insert("permitted", "0"));
 
 $_SESSION['email'] = $email;
 

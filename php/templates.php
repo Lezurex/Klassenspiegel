@@ -5,7 +5,7 @@ $class_name = "AP20b";
 function getNavbar($session) {
     global $class_name;
     $navbar = '<nav id="navbar">
-    <ul>
+    <ul class="list-unstyled">
         <li>
             <a href="/"><img src="https://tbz.ch/wp-content/themes/tbz/favicons/favicon.ico" alt="icon" height="40px"></a>
         </li>

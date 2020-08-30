@@ -90,11 +90,14 @@ global $class_name;
                 </div>
                 <div class="form-group">
                     <label for="register-password">Passwort</label>
-                    <input type="password" class="form-control" id="register-password" aria-describedby="register-password-hint"
+                    <input type="password" class="form-control" id="register-password"
+                           aria-describedby="register-password-hint"
                            placeholder="Passwort" autocomplete="new-password">
-                    <small id="register-password-hint" class="text-muted">Dein Passwort muss mindestens 8 Zeichen lang sein.</small>
+                    <small id="register-password-hint" class="text-muted">Dein Passwort muss mindestens 8 Zeichen lang
+                        sein.</small>
                     <small id="register-error" class="form-text" style="color: red;"></small>
                     <small id="register-http-error" class="form-text" style="color: red;"></small>
+                    <small id="register-success" class="form-text text-success"></small>
                 </div>
                 <div class="form-group">
 
@@ -109,6 +112,25 @@ global $class_name;
         </div>
     </div>
 </div>
+
+<div class="card-deck" style="margin: 50px 5%">
+    <div class="card"">
+        <div class="card-header">Nützliche Links</div>
+        <div class="card-body">
+            <h3>TBZ</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="https://ecolm.com" target="_blank">Ecolm TBZ</a></li>
+                <li class="list-group-item"><a href="https://bscw.tbz.ch/bscw/bscw.cgi" target="_blank">BSCW TBZ</a></li>
+                <li class="list-group-item"><a href="https://edu.juergarnold.ch/" target="_blank">edu.JuergArnold.ch</a></li>
+            </ul>
+            <h3 style="margin-top: 20px">BMZ</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="https://intranet.tam.ch/bmz/" target="_blank">Intranet BMZ</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <script src="js/login.js"></script>
 <script src="js/register.js"></script>
 </body>

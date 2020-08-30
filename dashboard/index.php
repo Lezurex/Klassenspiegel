@@ -123,7 +123,7 @@ foreach ($class_list as $key => $value) {
     <div class="card">
         <div class="card-header"><strong>Accounteinstellungen</strong></div>
         <div class="card-body">
-
+            <p>Work in progress</p>
         </div>
     </div>
 </div>

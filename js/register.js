@@ -92,7 +92,7 @@ function register() {
     };
     $.ajax({
         method:"POST",
-        url:"http://klassenspiegel.test/php/register.php",
+        url:"https://" + window.location.hostname + "/php/register.php",
         data: data,
         timeout:5000,
         success: function (data) {
@@ -102,7 +102,7 @@ function register() {
                 $("#register-error").html("Dies ist keine gültige E-Mail!");
                 $("#register-email").addClass("is-invalid");
             } else if(data == "200") {
-                window.location.href = "/dashboard";
+                $("#register-success").html("Du wurdest erfolgreich registriert! Du kannst dich erst einloggen, wenn dein Konto freigeschaltet wurde.");
             } else {
                 $("#register-http-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
             }

@@ -43,7 +43,7 @@ function edit() {
     };
     $.ajax({
         method:"POST",
-        url:"http://klassenspiegel.test/php/edit.php",
+        url:"https://" + window.location.hostname + "/php/edit.php",
         data: data,
         timeout:5000,
         success: function (data) {
