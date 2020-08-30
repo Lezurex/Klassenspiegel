@@ -115,7 +115,7 @@ foreach ($class_list as $key => $value) {
                 <label for="edit-hobbys">Hobbys</label><input class="form-control edit-input" type="text" name="hobbys"
                                                               id="edit-hobbys" placeholder="Hobbys"
                                                               value="<?php echo $user['hobbys']; ?>"><br>
-                <small class="text-success" id="edit-status"></small>
+                <small class="text-success" id="edit-status"></small><br><br>
                 <button type="button" id="btn-edit-save" class="btn btn-success float-right">Speichern</button>
             </form>
         </div>
