@@ -159,11 +159,17 @@ class DatabaseAdapter {
 
     /**
      * @param String $tablename
+     * @param String $orderByColumn
      * @return array|null Array with associative arrays of the rows
      */
-    public function getAllStringsFromTable($tablename) {
+    public function getAllStringsFromTable($tablename, $orderByColumn = null) {
         $stringBuilder = "";
         $stringBuilder .= "SELECT * FROM {$tablename}";
+
+        if($orderByColumn != null) {
+            $stringBuilder .= " ORDER BY {$orderByColumn} ASC";
+        }
+
         try {
             $result = mysqli_query(Database::getConnection(), $stringBuilder);
             while($rows = $result->fetch_all(MYSQLI_ASSOC)) {

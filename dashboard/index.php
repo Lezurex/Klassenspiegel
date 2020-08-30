@@ -12,13 +12,13 @@ if (!isset($_SESSION['email'])) {
 
 $db = new DatabaseAdapter();
 
-$class_list = $db->getAllStringsFromTable("users");
+$class_list = $db->getAllStringsFromTable("users", "lastname");
 $user = $db->getStringsFromTable("users", new Key("email", $_SESSION['email']));
 
 $table = "";
-foreach ($class_list as $key => $value) {
+foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
     foreach ($value as $key => $element) {
-        if($element == "") {
+        if ($element == "") {
             $value[$key] = "Kein Eintrag";
         }
     }
@@ -28,13 +28,13 @@ foreach ($class_list as $key => $value) {
     $maps_company = str_replace(",", "%2C", $value['company']);
     $table .=
         "<tr>
-    <td>" . $value['lastname'] . "</td>
-    <td>" . $value['firstname'] . "</td>
-    <td><a href='mailto:" . $value['email'] . "'>" . $value['email'] . "</a></td>
-    <td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_home . "' target='_blank' title='In Google Maps öffnen'>" . $value['location'] . "</a></td>
-    <td><a href='tel:" . $value['phone'] . "' title='Anrufen'>" . $value['phone'] . "</a></td>
-    <td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_company . "' target='_blank' title='In Google Maps öffnen'>" . $value['company'] . "</a></td>
-    <td>" . $value['hobbys'] . "</td>
+<td>" . $value['lastname'] . "</td>
+<td>" . $value['firstname'] . "</td>
+<td><a href='mailto:" . $value['email'] . "'>" . $value['email'] . "</a></td>
+<td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_home . "' target='_blank' title='In Google Maps öffnen'>" . $value['location'] . "</a></td>
+<td><a href='tel:" . $value['phone'] . "' title='Anrufen'>" . $value['phone'] . "</a></td>
+<td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_company . "' target='_blank' title='In Google Maps öffnen'>" . $value['company'] . "</a></td>
+<td>" . $value['hobbys'] . "</td>
 </tr>";
 }
 ?>
@@ -59,6 +59,7 @@ foreach ($class_list as $key => $value) {
 
     <script src="/js/errorResolver.js"></script>
     <script src="/js/edit.js"></script>
+    <script src="/js/account.js"></script>
 </head>
 <body>
 <?php echo getNavbar($_SESSION) ?>
@@ -66,20 +67,20 @@ foreach ($class_list as $key => $value) {
 <h1 class="text-center" style="margin-top: 50px;">Dashboard</h1>
 <p class="text-center"><?php
     $hour = (int)date("H");
-    if($hour > 6 && $hour < 12) {
+    if ($hour > 6 && $hour < 12) {
         $greeting = "Guten Morgen";
-    } else if($hour > 11 && $hour < 14) {
+    } else if ($hour > 11 && $hour < 14) {
         $greeting = "Guten Mittag";
-    } else if($hour > 13 && $hour < 17) {
+    } else if ($hour > 13 && $hour < 17) {
         $greeting = "Guten Nachmittag";
-    } else if($hour > 16 && $hour < 23) {
+    } else if ($hour > 16 && $hour < 23) {
         $greeting = "Guten Abend";
     } else {
         $greeting = "Gute Nacht";
     }
 
     $query = $db->getStringFromTable("users", "firstname", new Key("email", $_SESSION['email'])); //queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
-    if($query == "") {
+    if ($query == "") {
         echo "$greeting!";
     } else
         echo "$greeting, $query!";
@@ -90,26 +91,31 @@ foreach ($class_list as $key => $value) {
         <div class="card-header"><strong>Dein Eintrag in der Klassenliste</strong></div>
         <div class="card-body">
             <form>
-                <label for="edit-lastname">Nachname</label><input class="form-control edit-input" type="text" name="lastname"
+                <label for="edit-lastname">Nachname</label><input class="form-control edit-input" type="text"
+                                                                  name="lastname"
                                                                   autocomplete="family-name"
                                                                   id="edit-lastname" placeholder="Nachname"
                                                                   value="<?php echo $user['lastname']; ?>"><br>
-                <label for="edit-firstname">Vorname</label><input class="form-control edit-input" type="text" name="firstname"
+                <label for="edit-firstname">Vorname</label><input class="form-control edit-input" type="text"
+                                                                  name="firstname"
                                                                   autocomplete="given-name"
                                                                   id="edit-firstname" placeholder="Vorname"
                                                                   value="<?php echo $user['firstname']; ?>"><br>
-                <label for="edit-location">Wohnadresse</label><input class="form-control edit-input" type="text" name="location"
-                                                                 autocomplete="street-address"
-                                                                 id="edit-location" placeholder="Wohnort"
-                                                                 value="<?php echo $user['location']; ?>"><br>
-                <label for="edit-phone">Handynummer</label><input class="form-control edit-input" type="text" name="phone"
+                <label for="edit-location">Wohnadresse</label><input class="form-control edit-input" type="text"
+                                                                     name="location"
+                                                                     autocomplete="street-address"
+                                                                     id="edit-location" placeholder="Wohnort"
+                                                                     value="<?php echo $user['location']; ?>"><br>
+                <label for="edit-phone">Handynummer</label><input class="form-control edit-input" type="text"
+                                                                  name="phone"
                                                                   autocomplete="tel"
                                                                   id="edit-phone"
                                                                   placeholder="Handynummer (+41 000 000 00 00)"
                                                                   pattern="^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$"
                                                                   value="<?php echo $user['phone']; ?>">
                 <small style="color: red;" id="edit-phone-error"> </small><br>
-                <label for="edit-company">Arbeitgeber</label><input class="form-control edit-input" type="text" name="company"
+                <label for="edit-company">Arbeitgeber</label><input class="form-control edit-input" type="text"
+                                                                    name="company"
                                                                     id="edit-company" placeholder="Arbeitgeber"
                                                                     value="<?php echo $user['company']; ?>"><br>
                 <label for="edit-hobbys">Hobbys</label><input class="form-control edit-input" type="text" name="hobbys"
@@ -123,7 +129,44 @@ foreach ($class_list as $key => $value) {
     <div class="card">
         <div class="card-header"><strong>Accounteinstellungen</strong></div>
         <div class="card-body">
-            <p>Work in progress</p>
+            <p>Deine aktuelle E-Mail Adresse lautet: <strong><?php echo $_SESSION['email'] ?></strong>. Du kannst sie
+                hier ändern.</p>
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#account-email-collapse"
+                        aria-expanded="false" aria-controls="account-email">
+                    E-Mail ändern
+                </button>
+            </p>
+            <div class="collapse" id="account-email-collapse">
+                <div class="card card-body">
+                    <label for="account-email">Neue E-Mail</label><input class="form-control" type="email" name="email"
+                                                                         id="account-email"
+                                                                         placeholder="max.mustermann@mustermail.ch"><br>
+                    <label for="account-email-repeat">Neue E-Mail wiederholen</label><input class="form-control"
+                                                                                            type="email"
+                                                                                            name="email-repeat"
+                                                                                            id="account-email-repeat"
+                                                                                            placeholder="max.mustermann@mustermail.ch"><br>
+                    <small id="account-email-error" class="text-danger"></small>
+                    <small id="account-email-success" class="text-success"></small><br>
+
+                    <button type="button" id="btn-account-email-save" class="btn btn-success float-right" disabled onclick="changeEmail();">Speichern</button>
+                </div>
+            </div>
+            <br>
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#account-password-collapse"
+                        aria-expanded="false" aria-controls="account-password">
+                    Passwort ändern
+                </button>
+            </p>
+            <div class="collapse" id="account-password-collapse">
+                <div class="card card-body">
+
+                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right">Speichern
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

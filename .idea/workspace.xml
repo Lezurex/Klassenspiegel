@@ -19,19 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add own entry customizable">
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add landing page&#10;Add manual account activation required&#10;Remove klassenspiegel_insert.php">
+      <change afterPath="$PROJECT_DIR$/js/account.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/changeEmail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/klassenspiegel_insert.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/database/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/database/DatabaseAdapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/database/DatabaseAdapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/mail-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/mail-config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/templates.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +108,8 @@
       <workItem from="1598772416850" duration="2904000" />
       <workItem from="1598798679699" duration="4560000" />
       <workItem from="1598806939890" duration="275000" />
-      <workItem from="1598807546149" duration="1536000" />
+      <workItem from="1598807546149" duration="2722000" />
+      <workItem from="1598813848479" duration="4753000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -157,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598746418937</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add landing page&#10;Add manual account activation required&#10;Remove klassenspiegel_insert.php">
+      <created>1598811962970</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598811962970</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +187,8 @@
     <MESSAGE value="Add database utils" />
     <MESSAGE value="Add deleteFromTable() function to DatabaseAdapter.php" />
     <MESSAGE value="Update everything to new DatabseAdapter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update everything to new DatabseAdapter" />
+    <MESSAGE value="Add landing page&#10;Add manual account activation required&#10;Remove klassenspiegel_insert.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add landing page&#10;Add manual account activation required&#10;Remove klassenspiegel_insert.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="395" y="91" key="#Inspections" timestamp="1598536636609">
@@ -252,11 +256,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1063" y="407" key="NewPhpClassDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598702875022" />
-    <state x="1007" y="571" key="NewPhpFileDialog" timestamp="1598774109819">
+    <state x="1007" y="571" key="NewPhpFileDialog" timestamp="1598818156417">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1598627902650" />
-    <state x="1007" y="571" key="NewPhpFileDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598774109819" />
+    <state x="1007" y="571" key="NewPhpFileDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598818156417" />
     <state x="462" y="97" key="SettingsEditor" timestamp="1598773169153">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -266,11 +270,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1598746424053">
+    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1598811964211">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598540909693" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598746424053" />
+    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598811964211" />
     <state x="977" y="554" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598710430698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
