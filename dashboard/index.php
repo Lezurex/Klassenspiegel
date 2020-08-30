@@ -1,7 +1,7 @@
 <?php
 
 include "../php/templates.php";
-include "../php/database.php";
+require "../php/database/DatabaseAdapter.php";
 
 session_start();
 
@@ -10,45 +10,31 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "klassenspiegel";
+$db = new DatabaseAdapter();
 
-$connection = mysqli_connect($host, $username, $password, $database);
-
-$sql = "SELECT * FROM users ORDER BY lastname";
-$result = mysqli_query($connection, $sql);
-$items = array();
-$array = array();
-
-while ($row = mysqli_fetch_assoc($result)) {
-    array_push($items, $row['lastname']);
-    array_push($items, $row['firstname']);
-    array_push($items, $row['location']);
-    array_push($items, $row['phone']);
-    array_push($items, $row['company']);
-    array_push($items, $row['hobbys']);
-    array_push($items, $row['email']);
-    array_push($array, $items);
-    $items = array();
-}
+$class_list = $db->getAllStringsFromTable("users");
+$user = $db->getStringsFromTable("users", new Key("email", $_SESSION['email']));
 
 $table = "";
-foreach ($array as $key => $value) {
-    $maps_home = str_replace(" ", "%20", $value[2]);
-    $maps_company = str_replace(" ", "%20", $value[4]);
-    $maps_home = str_replace(",", "%2C", $value[2]);
-    $maps_company = str_replace(",", "%2C", $value[4]);
+foreach ($class_list as $key => $value) {
+    foreach ($value as $key => $element) {
+        if($element == "") {
+            $value[$key] = "Kein Eintrag";
+        }
+    }
+    $maps_home = str_replace(" ", "%20", $value['location']);
+    $maps_company = str_replace(" ", "%20", $value['company']);
+    $maps_home = str_replace(",", "%2C", $value['location']);
+    $maps_company = str_replace(",", "%2C", $value['company']);
     $table .=
         "<tr>
-    <td>" . $value[0] . "</td>
-    <td>" . $value[1] . "</td>
-    <td><a href='mailto:$value[6]'>" . $value[6] . "</a></td>
-    <td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_home . "' target='_blank' title='In Google Maps öffnen'>" . $value[2] . "</a></td>
-    <td><a href='tel:" . $value[3] . "' title='Anrufen'>" . $value[3] . "</a></td>
-    <td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_company . "' target='_blank' title='In Google Maps öffnen'>" . $value[4] . "</a></td>
-    <td>" . $value[5] . "</td>
+    <td>" . $value['lastname'] . "</td>
+    <td>" . $value['firstname'] . "</td>
+    <td><a href='mailto:" . $value['email'] . "'>" . $value['email'] . "</a></td>
+    <td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_home . "' target='_blank' title='In Google Maps öffnen'>" . $value['location'] . "</a></td>
+    <td><a href='tel:" . $value['phone'] . "' title='Anrufen'>" . $value['phone'] . "</a></td>
+    <td><a href='https://www.google.com/maps/search/?api=1&query=" . $maps_company . "' target='_blank' title='In Google Maps öffnen'>" . $value['company'] . "</a></td>
+    <td>" . $value['hobbys'] . "</td>
 </tr>";
 }
 ?>
@@ -92,42 +78,58 @@ foreach ($array as $key => $value) {
         $greeting = "Gute Nacht";
     }
 
-    $query = queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
-    if($query == "Kein Eintrag") {
+    $query = $db->getStringFromTable("users", "firstname", new Key("email", $_SESSION['email'])); //queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
+    if($query == "") {
         echo "$greeting!";
     } else
         echo "$greeting, $query!";
     ?></p>
 
-<div class="card-deck" style="margin: 50px auto">
+<div class="card-deck" style="margin: 50px 5%">
     <div class="card" id="card-edit">
+        <div class="card-header"><strong>Dein Eintrag in der Klassenliste</strong></div>
         <div class="card-body">
             <form>
-                <label for="edit-lastname">Nachname</label><input class="form-control" type="text" name="lastname"
+                <label for="edit-lastname">Nachname</label><input class="form-control edit-input" type="text" name="lastname"
                                                                   autocomplete="family-name"
-                                                                  id="edit-lastname" placeholder="Nachname"><br>
-                <label for="edit-firstname">Vorname</label><input class="form-control" type="text" name="firstname"
+                                                                  id="edit-lastname" placeholder="Nachname"
+                                                                  value="<?php echo $user['lastname']; ?>"><br>
+                <label for="edit-firstname">Vorname</label><input class="form-control edit-input" type="text" name="firstname"
                                                                   autocomplete="given-name"
-                                                                  id="edit-firstname" placeholder="Vorname"><br>
-                <label for="edit-location">Wohnort</label><input class="form-control" type="text" name="location"
+                                                                  id="edit-firstname" placeholder="Vorname"
+                                                                  value="<?php echo $user['firstname']; ?>"><br>
+                <label for="edit-location">Wohnort</label><input class="form-control edit-input" type="text" name="location"
                                                                  autocomplete="street-address"
-                                                                 id="edit-location" placeholder="Wohnort"><br>
-                <label for="edit-phone">Handynummer</label><input class="form-control" type="text" name="phone"
+                                                                 id="edit-location" placeholder="Wohnort"
+                                                                 value="<?php echo $user['location']; ?>"><br>
+                <label for="edit-phone">Handynummer</label><input class="form-control edit-input" type="text" name="phone"
                                                                   autocomplete="tel"
                                                                   id="edit-phone"
                                                                   placeholder="Handynummer (+41 000 000 00 00)"
-                                                                  pattern="^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$"><br>
-                <small style="color: red;" id="edit-phone-error"></small>
-                <label for="edit-company">Arbeitgeber</label><input class="form-control" type="text" name="company"
-                                                                    autocomplete="organization"
-                                                                    id="edit-company" placeholder="Arbeitgeber"><br>
-                <label for="edit-hobbys">Hobbys</label><input class="form-control" type="text" name="hobbys"
-                                                              id="edit-hobbys" placeholder="Hobbys"><br>
+                                                                  pattern="^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$"
+                                                                  value="<?php echo $user['phone']; ?>">
+                <small style="color: red;" id="edit-phone-error"> </small><br>
+                <label for="edit-company">Arbeitgeber</label><input class="form-control edit-input" type="text" name="company"
+                                                                    id="edit-company" placeholder="Arbeitgeber"
+                                                                    value="<?php echo $user['company']; ?>"><br>
+                <label for="edit-hobbys">Hobbys</label><input class="form-control edit-input" type="text" name="hobbys"
+                                                              id="edit-hobbys" placeholder="Hobbys"
+                                                              value="<?php echo $user['hobbys']; ?>"><br>
+                <small class="text-success" id="edit-status"></small>
                 <button type="button" id="btn-edit-save" class="btn btn-success float-right">Speichern</button>
             </form>
         </div>
     </div>
     <div class="card">
+        <div class="card-header"><strong>Accounteinstellungen</strong></div>
+        <div class="card-body">
+
+        </div>
+    </div>
+</div>
+<div class="card-deck" style="margin: 50px 5%">
+    <div class="card">
+        <div class="card-header"><strong>Klassenliste</strong></div>
         <div class="card-body">
             <div class="overflow-auto">
                 <table class="table">

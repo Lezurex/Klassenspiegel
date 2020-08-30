@@ -3,6 +3,8 @@ include "php/templates.php";
 
 session_start();
 
+global $class_name;
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ session_start();
 <body>
 <?php echo getNavbar($_SESSION); ?>
 
-<h1 class="text-center" style="margin-top: 50px">Klasse AP20b/BIN20a</h1>
+<h1 class="text-center" style="margin-top: 50px">Klasse <?php echo $class_name; ?></h1>
 <p class="text-center">Das Webportal der Klasse - eine Eigenentwicklung.</p>
 
 <!-- Login Modal -->

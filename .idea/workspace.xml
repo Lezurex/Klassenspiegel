@@ -6,14 +6,31 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Fix list not scrollable&#10;Enhancement form autocomplete">
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Update everything to new DatabseAdapter">
+      <change afterPath="$PROJECT_DIR$/php/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Klassenspiegel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Klassenspiegel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/database/DatabaseAdapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/database/DatabaseAdapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/database/Insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/database/Insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/database/Row.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/database/Column.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +78,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Supercraft" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Klassenspiegel\php" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="git status" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -76,8 +105,11 @@
       <workItem from="1598590503547" duration="1958000" />
       <workItem from="1598621863545" duration="19000" />
       <workItem from="1598626453051" duration="2016000" />
-      <workItem from="1598647380164" duration="650000" />
-      <workItem from="1598648428031" duration="1220000" />
+      <workItem from="1598634940896" duration="226000" />
+      <workItem from="1598636174476" duration="9222000" />
+      <workItem from="1598714866125" duration="26000" />
+      <workItem from="1598714905022" duration="7990000" />
+      <workItem from="1598772416850" duration="2904000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -100,14 +132,28 @@
       <option name="project" value="LOCAL" />
       <updated>1598540905967</updated>
     </task>
-    <task id="LOCAL-00004" summary="Fix list not scrollable&#10;Enhancement form autocomplete">
-      <created>1598649219771</created>
+    <task id="LOCAL-00004" summary="Add database utils">
+      <created>1598708709368</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1598649219771</updated>
+      <updated>1598708709368</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add deleteFromTable() function to DatabaseAdapter.php">
+      <created>1598710472472</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598710472472</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update everything to new DatabseAdapter">
+      <created>1598746418937</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598746418937</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,14 +177,12 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added login frontend" />
-    <MESSAGE value="Fix list not scrollable&#10;Enhancement form autocomplete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix list not scrollable&#10;Enhancement form autocomplete" />
+    <MESSAGE value="Add database utils" />
+    <MESSAGE value="Add deleteFromTable() function to DatabaseAdapter.php" />
+    <MESSAGE value="Update everything to new DatabseAdapter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update everything to new DatabseAdapter" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="578" y="289" key="#Composer" timestamp="1598648072522">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="578" y="289" key="#Composer/0.0.1536.824@0.0.1536.824" timestamp="1598648072522" />
     <state x="395" y="91" key="#Inspections" timestamp="1598536636609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -155,45 +199,82 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598534950240" />
+    <state x="1077" y="333" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598774372961">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1077" y="333" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598774372961" />
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598745428645">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598745428645" />
     <state x="0" y="197" key="#org.intellij.plugins.intelliLang.inject.config.ui.BaseInjectionDialog" timestamp="1598536878037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="197" key="#org.intellij.plugins.intelliLang.inject.config.ui.BaseInjectionDialog/0.0.1536.824@0.0.1536.824" timestamp="1598536878037" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1598621880344">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1043" y="610" width="474" height="280" key="ComposerInitDialogKey" timestamp="1598702594246">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1043" y="610" width="474" height="280" key="ComposerInitDialogKey/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598702594246" />
+    <state x="915" y="282" key="FileChooserDialogImpl" timestamp="1598638126822">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598621880344" />
+    <state x="915" y="282" key="FileChooserDialogImpl/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598638126822" />
+    <state width="2517" height="394" key="GridCell.Tab.0.bottom" timestamp="1598644934418">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="394" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598644934418" />
+    <state width="2517" height="394" key="GridCell.Tab.0.center" timestamp="1598644934418">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="394" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598644934418" />
+    <state width="2517" height="394" key="GridCell.Tab.0.left" timestamp="1598644934418">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="394" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598644934418" />
+    <state width="2517" height="394" key="GridCell.Tab.0.right" timestamp="1598644934418">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="394" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598644934418" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1598537012846">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1598537012846" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1598627902650">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1063" y="407" key="NewPhpClassDialog" timestamp="1598702875022">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1063" y="407" key="NewPhpClassDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598702875022" />
+    <state x="1007" y="571" key="NewPhpFileDialog" timestamp="1598774109819">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1598627902650" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1598647349148">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1007" y="571" key="NewPhpFileDialog/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598774109819" />
+    <state x="462" y="97" key="SettingsEditor" timestamp="1598773169153">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598647349148" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598536951362" />
+    <state x="462" y="97" key="SettingsEditor/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598773169153" />
     <state x="618" y="326" key="VCS.ChangelistChooser" timestamp="1598529879007">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1598649221711">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1598746424053">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598649221711" />
-    <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1598647311967">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="640" y="257" key="cloudConfig.SelfSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598647311967" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598562904410">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598540909693" />
+    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598746424053" />
+    <state x="977" y="554" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598710430698">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1598562904410" />
+    <state x="977" y="554" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598710430698" />
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1598529691665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598529691665" />
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1598644925283">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup/0.0.2560.1400/-1920.197.1920.1040@0.0.2560.1400" timestamp="1598644925283" />
   </component>
 </project>

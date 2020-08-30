@@ -1,21 +1,26 @@
 <?php
 
-include "database.php";
+include "database/DatabaseAdapter.php";
+
+$db = new DatabaseAdapter();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if(!is_null($result = queryEntryFromTable("users", "email", "email", $email))) {
+if($db->containsEntry("users", new Key("email", $email))) {
     echo "902";
+    exit();
+}
+
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "903";
     exit();
 }
 
 session_start();
 
-global $connection;
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-$sql = "INSERT INTO `users`(`email`, `password`) VALUES ('$email','$hashed_password')";
-mysqli_query($connection, $sql);
+$db->insertIntoTable("users", new Insert("email", $email), new Insert("password", $hashed_password));
 
 $_SESSION['email'] = $email;
 
