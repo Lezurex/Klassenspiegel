@@ -1,6 +1,6 @@
 <?php
 
-class Row {
+class Column {
 
     private $name;
     private $type;

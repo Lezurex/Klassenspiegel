@@ -12,6 +12,11 @@ if($db->containsEntry("users", new Key("email", $email))) {
     exit();
 }
 
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "903";
+    exit();
+}
+
 session_start();
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);

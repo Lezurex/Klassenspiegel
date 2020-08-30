@@ -2,16 +2,16 @@
 
 class Insert {
 
-    private $row;
+    private $column;
     private $value;
 
-    public function __construct($row, $value) {
-        $this->row = $row;
+    public function __construct($column, $value) {
+        $this->column = $column;
         $this->value = $value;
     }
 
-    public function getRow() {
-        return $this->row;
+    public function getColumn() {
+        return $this->column;
     }
 
     public function getValue()

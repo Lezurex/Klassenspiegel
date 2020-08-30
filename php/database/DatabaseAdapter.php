@@ -2,7 +2,7 @@
 
 require "Key.php";
 require "Insert.php";
-require "Row.php";
+require "Column.php";
 require "Database.php";
 
 class DatabaseAdapter {
@@ -15,7 +15,7 @@ class DatabaseAdapter {
      * Create table in database
      *
      * @param String $name Name of the table to be created in the database specified in Database.php
-     * @param Row ...$row Rows to be added to the table
+     * @param Column ...$row Rows to be added to the table
      */
 
     public function createTable($name, ...$row) {
@@ -220,10 +220,10 @@ class DatabaseAdapter {
 
         foreach ($inserts as $insert) {
             if($length != 1) {
-                $stringBuilder .= $insert->getRow() . ", ";
+                $stringBuilder .= $insert->getColumn() . ", ";
                 $length--;
             } else {
-                $stringBuilder .= $insert->getRow();
+                $stringBuilder .= $insert->getColumn();
             }
         }
 
@@ -280,9 +280,9 @@ class DatabaseAdapter {
         $length = sizeof($inserts);
         foreach ($inserts as $insert) {
             if($length == 1) {
-                $stringBuilder .= $insert->getRow() . " = '" . $insert->getValue() . "' ";
+                $stringBuilder .= $insert->getColumn() . " = '" . $insert->getValue() . "' ";
             } else {
-                $stringBuilder .= $insert->getRow() . " = '" . $insert->getValue() . "', ";
+                $stringBuilder .= $insert->getColumn() . " = '" . $insert->getValue() . "', ";
                 $length--;
             }
         }
