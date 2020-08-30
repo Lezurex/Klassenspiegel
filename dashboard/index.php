@@ -98,7 +98,7 @@ foreach ($class_list as $key => $value) {
                                                                   autocomplete="given-name"
                                                                   id="edit-firstname" placeholder="Vorname"
                                                                   value="<?php echo $user['firstname']; ?>"><br>
-                <label for="edit-location">Wohnort</label><input class="form-control edit-input" type="text" name="location"
+                <label for="edit-location">Wohnadresse</label><input class="form-control edit-input" type="text" name="location"
                                                                  autocomplete="street-address"
                                                                  id="edit-location" placeholder="Wohnort"
                                                                  value="<?php echo $user['location']; ?>"><br>
@@ -137,7 +137,7 @@ foreach ($class_list as $key => $value) {
                     <th scope="col">Nachname</th>
                     <th scope="col">Vorname</th>
                     <th scope="col">E-Mail</th>
-                    <th scope="col">Wohnort</th>
+                    <th scope="col">Wohnadresse</th>
                     <th scope="col">Mobil-Nr.</th>
                     <th scope="col">Arbeitgeber</th>
                     <th scope="col">Hobbys</th>
