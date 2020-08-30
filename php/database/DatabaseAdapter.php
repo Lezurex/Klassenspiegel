@@ -77,9 +77,9 @@ class DatabaseAdapter {
         if($length != 0) {
             foreach($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND ";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
                     $length--;
                 }
             }
@@ -107,9 +107,9 @@ class DatabaseAdapter {
         if($length != 0) {
             foreach($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND ";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
                     $length--;
                 }
             }
@@ -127,6 +127,56 @@ class DatabaseAdapter {
     }
 
     /**
+     * @param String $tablename
+     * @param Key ...$keys
+     * @return array|null Array with associative arrays of the rows
+     */
+    public function getStringsFromTable($tablename, ...$keys) {
+        $stringBuilder = "";
+        $stringBuilder .= "SELECT * FROM {$tablename} ";
+        $length = sizeof($keys);
+        if($length != 0) {
+            foreach ($keys as $key) {
+                if($length == 1) {
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
+                } else {
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
+                    $length--;
+                }
+            }
+        }
+        try {
+            $result = mysqli_query(Database::getConnection(), $stringBuilder);
+            while($row = $result->fetch_assoc()) {
+                return $row;
+            }
+
+        } catch (mysqli_sql_exception $exception) {
+
+        }
+        return null;
+    }
+
+    /**
+     * @param String $tablename
+     * @return array|null Array with associative arrays of the rows
+     */
+    public function getAllStringsFromTable($tablename) {
+        $stringBuilder = "";
+        $stringBuilder .= "SELECT * FROM {$tablename}";
+        try {
+            $result = mysqli_query(Database::getConnection(), $stringBuilder);
+            while($rows = $result->fetch_all(MYSQLI_ASSOC)) {
+                return $rows;
+            }
+
+        } catch (mysqli_sql_exception $exception) {
+
+        }
+        return null;
+    }
+
+    /**
      * @param $tablename
      * @param $row
      * @param Key ...$keys
@@ -140,9 +190,9 @@ class DatabaseAdapter {
         if($length != 0) {
             foreach($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND ";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
                     $length--;
                 }
             }
@@ -169,7 +219,7 @@ class DatabaseAdapter {
         $length = sizeof($inserts);
 
         foreach ($inserts as $insert) {
-            if($length != 0) {
+            if($length != 1) {
                 $stringBuilder .= $insert->getRow() . ", ";
                 $length--;
             } else {
@@ -207,9 +257,9 @@ class DatabaseAdapter {
         if($length != 0) {
             foreach ($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND";
                     $length--;
                 }
             }
@@ -236,7 +286,7 @@ class DatabaseAdapter {
                 $length--;
             }
         }
-        $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+        $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
 
         return $this->executeCommand($stringBuilder);
     }
@@ -255,9 +305,9 @@ class DatabaseAdapter {
         if($length != 0) {
             foreach ($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= "WHERE " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND ";
+                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
                     $length--;
                 }
             }
@@ -287,9 +337,9 @@ class DatabaseAdapter {
         if($length != 0) {
             foreach ($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= " " . $key->getRow() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= " " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= " " . $key->getRow() . " = '" . $key->getKeyWord() . "' AND";
+                    $stringBuilder .= " " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND";
                     $length--;
                 }
             }

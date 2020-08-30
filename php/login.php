@@ -1,16 +1,18 @@
 <?php
 
-include "database.php";
+include "database/DatabaseAdapter.php";
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-if(!containsEntry("users", "email", $email)) {
+$db = new DatabaseAdapter();
+
+if(!$db->containsEntry("users", new Key("email", $email))) {
     echo "901";
     exit();
 }
 
-$result = queryEntryFromTable("users", "password", "email",  $email);
+$result = $db->getStringFromTable("users", "password", new Key("email", $email));
 if(!password_verify($password, $result)) {
     echo "901";
     exit();

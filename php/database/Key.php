@@ -3,17 +3,17 @@
 
 class Key {
 
-    private $row;
+    private $column;
     private $keyWord;
 
-    public function __construct($row, $keyWord) {
-        $this->row = $row;
+    public function __construct($column, $keyWord) {
+        $this->column = $column;
         $this->keyWord = $keyWord;
     }
 
-    public function getRow()
+    public function getColumn()
     {
-        return $this->row;
+        return $this->column;
     }
 
     public function getKeyWord()

@@ -99,7 +99,7 @@ function register() {
             if(data == "902") {
                 $("#register-http-error").html("Du bist schon registriert!");
             } else if(data == "200") {
-                window.location.href = "/dashboard";
+                //window.location.href = "/dashboard";
             } else {
                 $("#register-http-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
             }
