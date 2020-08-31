@@ -50,10 +50,10 @@ $().ready(function () {
     /**
      * Login button
      */
-    $("#login-login-btn").click(function (e) {
+    $("#login-login-btn").on("click", function (e) {
         e.preventDefault();
         login();
-    })
+    });
 });
 
 function submitChangerLogin() {

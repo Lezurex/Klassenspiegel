@@ -79,7 +79,7 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
         $greeting = "Gute Nacht";
     }
 
-    $query = $db->getStringFromTable("users", "firstname", new Key("email", $_SESSION['email'])); //queryEntryFromTable("users", "firstname", "email", $_SESSION['email']);
+    $query = $db->getStringFromTable("users", "firstname", new Key("email", $_SESSION['email']));
     if ($query == "") {
         echo "$greeting!";
     } else
