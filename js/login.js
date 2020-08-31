@@ -27,12 +27,12 @@ $().ready(function () {
         }
     });
 
-    $("#login-email").unbind("keypress").bind("keypress", function (event) {
+    $("#login-email").unbind("keyup").bind("keyup", function (event) {
         if (event.code === 'Enter') {
             login();
         }
     });
-    $("#login-password").unbind("keypress").bind("keypress", function (event) {
+    $("#login-password").unbind("keyup").bind("keyup", function (event) {
         if (event.code === 'Enter') {
             login();
         }
@@ -50,10 +50,10 @@ $().ready(function () {
     /**
      * Login button
      */
-    $("#login-login-btn").click(function (e) {
+    $("#login-login-btn").on("click", function (e) {
         e.preventDefault();
         login();
-    })
+    });
 });
 
 function submitChangerLogin() {

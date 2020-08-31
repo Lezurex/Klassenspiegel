@@ -26,12 +26,12 @@ $().ready(function () {
         }
     });
 
-    $("#register-email").unbind("keypress").bind("keypress", function (event) {
+    $("#register-email").unbind("keyup").bind("keyup", function (event) {
         if (event.code === 'Enter') {
             register();
         }
     });
-    $("#register-password").unbind("keypress").bind("keypress", function (event) {
+    $("#register-password").unbind("keyup").bind("keyup", function (event) {
         if (event.code === 'Enter') {
             register();
         }
