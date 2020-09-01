@@ -2,9 +2,9 @@
 
 
 class Database {
-    public static $host = "192.168.1.150";
-    public static $user = "ap20b";
-    public static $password = "Ru0ZRr*Q903!";
+    public static $host = "localhost"; //"192.168.1.150";
+    public static $user = "root"; //"ap20b";
+    public static $password = ""; //"Ru0ZRr*Q903!";
     public static $port = 3306;
     public static $database = "klassenspiegel";
     public static $con;

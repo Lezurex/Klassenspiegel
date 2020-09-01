@@ -36,7 +36,7 @@ global $class_name;
 <?php echo getNavbar($_SESSION); ?>
 
 <h1 class="text-center" style="margin-top: 50px">Klasse <?php echo $class_name; ?></h1>
-<p class="text-center">Das Webportal der Klasse - eine Eigenentwicklung.</p>
+<p class="text-center">Das Webportal der Klasse</p>
 
 <!-- Login Modal -->
 <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
@@ -126,6 +126,10 @@ global $class_name;
             <h3 style="margin-top: 20px">BMZ</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="https://intranet.tam.ch/bmz/" target="_blank">Intranet BMZ</a></li>
+            </ul>
+            <h3 style="margin-top: 20px">Quizlet (BMS)</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/langenscheidt-franzosisch" target="_blank">Französisch</a></li>
             </ul>
         </div>
     </div>

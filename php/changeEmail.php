@@ -14,6 +14,15 @@ if($_SESSION['email'] == $_POST['email']) {
     exit();
 }
 
-sendEmail($_POST['email'], "Test", "Hallo");
+$token = md5(rand(0, 1000));
+
+$db = new DatabaseAdapter();
+$db->insertIntoTable("email_verification", new Insert("old_email", $_SESSION['email']),
+    new Insert("new_email", $_POST['email']),
+    new Insert("token",$token));
 
 echo "200";
+
+sendEmail($_POST['email'], "E-Mail Verifizierung", "Hallo!<br>
+Du bekommst diese E-Mail, da du deine E-Mail auf ap20b.lezurex.com verifizieren musst.
+Klicke <a href='https://klassenspiegel.test/dashboard/verify.php?token={$token}'>hier</a>, um dich zu verifizieren!");
