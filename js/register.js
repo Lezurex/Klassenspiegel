@@ -2,20 +2,10 @@ $().ready(function () {
     /**
      * Removes error message when changed
      */
-    $("#register-email").keyup(function () {
+    $("#register-email").on("keyup", function (event) {
         $("#register-email").removeClass("is-invalid");
         $("#register-error").html("");
-        submitChangerRegister()
-    });
-    $("#register-password").on("keyup", function () {
-        $("#register-password").removeClass("is-invalid");
-        $("#register-error").html("");
-        submitChangerRegister()
-    });
-    /**
-     * E-Mail validation
-     */
-    $("#register-email").keyup(function () {
+        submitChangerRegister();
         let email = $("#register-email").val();
         if (validateEmail(email)) {
             $("#register-email").removeClass("is-invalid");
@@ -24,14 +14,15 @@ $().ready(function () {
             $("#register-email").removeClass("is-valid");
             $("#register-email").addClass("is-invalid");
         }
-    });
-
-    $("#register-email").unbind("keyup").bind("keyup", function (event) {
         if (event.code === 'Enter') {
             register();
         }
     });
-    $("#register-password").unbind("keyup").bind("keyup", function (event) {
+
+    $("#register-password").on("keyup", function (event) {
+        $("#register-password").removeClass("is-invalid");
+        $("#register-error").html("");
+        submitChangerRegister()
         if (event.code === 'Enter') {
             register();
         }

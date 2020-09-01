@@ -132,7 +132,8 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
             <p>Deine aktuelle E-Mail Adresse lautet: <strong><?php echo $_SESSION['email'] ?></strong>. Du kannst sie
                 hier ändern.</p>
             <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#account-email-collapse"
+                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                        data-target="#account-email-collapse"
                         aria-expanded="false" aria-controls="account-email">
                     E-Mail ändern
                 </button>
@@ -150,19 +151,38 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
                     <small id="account-email-error" class="text-danger"></small>
                     <small id="account-email-success" class="text-success"></small><br>
 
-                    <button type="button" id="btn-account-email-save" class="btn btn-success float-right" disabled onclick="changeEmail();">Speichern</button>
+                    <button type="button" id="btn-account-email-save" class="btn btn-success float-right" disabled
+                            onclick="changeEmail();">Speichern
+                    </button>
                 </div>
             </div>
             <br>
             <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#account-password-collapse"
+                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                        data-target="#account-password-collapse"
                         aria-expanded="false" aria-controls="account-password">
                     Passwort ändern
                 </button>
             </p>
             <div class="collapse" id="account-password-collapse">
                 <div class="card card-body">
+                    <label for="account-old-pw">Altes Passwort</label><input class="form-control password-change" type="password"
+                                                                             name="old-pw"
+                                                                             autocomplete="current-password"
+                                                                             id="account-old-pw"><br>
+                    <label for="account-new-pw">Neues Passwort</label><input class="form-control password-change"
+                                                                             type="password"
+                                                                             name="new-pw"
+                                                                             id="account-new-pw"
+                                                                             autocomplete="new-password"><br>
 
+                    <label for="account-email-repeat">Neues Passwort wiederholen</label><input class="form-control password-change"
+                                                                                               type="password"
+                                                                                               name="new-pw-repeat"
+                                                                                               id="account-new-pw-repeat"
+                                                                                               autocomplete="new-password"><br>
+                    <small id="account-password-error" class="text-danger"></small>
+                    <small id="account-password-success" class="text-success"></small><br>
                     <button type="button" id="btn-account-password-save" class="btn btn-success float-right">Speichern
                     </button>
                 </div>
