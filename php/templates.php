@@ -11,16 +11,20 @@ function getNavbar($session) {
         </li>
         <li>
             <a href="/" class="link-unstyled"><h3 class="h3" id="nav-title">'.$class_name.'</h3></a>
-        <li>
-        <li style="float: right">';
+        </li>';
 
     if (!isset($session['email'])) {
-        $navbar .= '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login" id="btn-login">
+        $navbar .= '<li class="float-right"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login" id="btn-login">
     Login
         </button>';
     } else
-        $navbar .= '<a href="/dashboard"><button type="button" class="btn btn-primary" id="btn-login">
+        $navbar .= '
+<li><a href="/dashboard/aufgaben">Aufgaben</a></li>
+<li class="float-right"><a href="/dashboard"><button type="button" class="btn btn-primary" id="btn-login">
     Dashboard
+    </button></a></li>
+    <li class="float-right"><a href="/php/logout.php"><button type="button" class="btn btn-danger">
+    Ausloggen
     </button></a>';
 
     $navbar .= '</li>

@@ -29,6 +29,24 @@ $(document).ready(function () {
 
     $(".password-change").each(function () {
         $(this).on("keyup", function (event) {
+            $("#account-password-error").html("");
+            if ($("#account-new-pw").val().length < 8 && $("#account-new-pw").val() != "") {
+                $("#account-new-pw").removeClass("is-valid");
+                $("#account-new-pwt").addClass("is-invalid");
+                $("#btn-account-password-save").attr("disabled", "disabled");
+                $("#account-password-error").html("Dein Passwort muss mindestens 8 Zeichen lang sein.");
+            }  else if($("#account-new-pw").val() == $("#account-new-pw-repeat").val()) {
+                $("#account-new-pw-repeat").removeClass("is-invalid");
+                $("#account-new-pw-repeat").addClass("is-valid");
+                $("#btn-account-password-save").removeAttr("disabled");
+                $("#account-password-error").html("");
+            } else {
+                $("#account-new-pw-repeat").removeClass("is-valid");
+                $("#account-new-pw-repeat").addClass("is-invalid");
+                $("#btn-account-password-save").attr("disabled", "disabled");
+                $("#account-password-error").html("Die Passwörter stimmen nicht überein!");
+            }
+
             if(event.key == "Enter") {
                 changePassword();
             }
@@ -52,8 +70,9 @@ function emailSubmitChanger() {
 }
 
 function changeEmail() {
-    $("#account-email-error").val("");
-    $("#account-email-success").val("");
+    $("#account-email-error").html("");
+    $("#account-email-success").html("");
+    $("#account-email-loading").css("visibility", "visible");
     let queryData = {
         'email': $("#account-email").val(),
     };
@@ -63,6 +82,7 @@ function changeEmail() {
         data: queryData,
         timeout: 5000,
         success: function (data) {
+            $("#account-email-loading").css("visibility", "hidden");
             if (data == "902") {
                 $("#account-email-error").html("Du benutzt schon diese E-Mail.");
             } else if (data == "200") {
@@ -72,6 +92,7 @@ function changeEmail() {
             }
         },
         error: function (xhr, status, error) {
+            $("#account-email-loading").css("visibility", "hidden");
             $("#account-email-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
         }
     });
@@ -91,9 +112,9 @@ function changePassword() {
         timeout: 5000,
         success: function (data) {
             if (data == "902") {
-                $("#account-password-error").html("Du benutzt schon diese E-Mail.");
+                $("#account-password-error").html("Das eingegebene Passwort ist falsch!");
             } else if (data == "200") {
-                $("#account-password-success").html("Eine Bestätigungsmail von <strong>klasseap20b@gmail.com</strong> wurde an die Adresse <strong>" + queryData.email + "</strong> gesendet. Schau eventuell auch im Spam-Ordner nach.");
+                $("#account-password-success").html("Dein Passwort wurde erfolgreich geändert!");
             } else {
                 $("#account-password-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
             }

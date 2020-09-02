@@ -2,6 +2,9 @@
     background-color: #dadada;
     overflow: hidden;
     box-shadow: 0 6px 5px 0 rgba(0,0,0,0.3);
+    margin: 0 auto;
+    width: 100%;
+    vertical-align: middle;
 }
 
 ul {
@@ -12,6 +15,7 @@ ul {
 li {
     float: left;
     padding: 8px;
+    display: inline-block;
 }
 
 li a {
@@ -23,8 +27,7 @@ li a {
 }
 
 #btn-login {
-    float: right;
-
+    float: right;;
 }
 
 .link-unstyled {

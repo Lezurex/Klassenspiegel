@@ -17,9 +17,14 @@ if($_SESSION['email'] == $_POST['email']) {
 $token = md5(rand(0, 1000));
 
 $db = new DatabaseAdapter();
-$db->insertIntoTable("email_verification", new Insert("old_email", $_SESSION['email']),
-    new Insert("new_email", $_POST['email']),
-    new Insert("token",$token));
+
+if($db->containsEntry("email_verification", new Key("old_email", $_SESSION['email']))) {
+    $db->updateValues("email_verification", new Key("old_email", $_SESSION['email']),
+        new Insert("new_email", $_POST['email']), new Insert("token", $token));
+} else
+    $db->insertIntoTable("email_verification", new Insert("old_email", $_SESSION['email']),
+        new Insert("new_email", $_POST['email']),
+        new Insert("token",$token));
 
 echo "200";
 

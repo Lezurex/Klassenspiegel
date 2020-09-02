@@ -149,7 +149,10 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
                                                                                             id="account-email-repeat"
                                                                                             placeholder="max.mustermann@mustermail.ch"><br>
                     <small id="account-email-error" class="text-danger"></small>
-                    <small id="account-email-success" class="text-success"></small><br>
+                    <small id="account-email-success" class="text-success"></small>
+                    <div class="spinner-border text-success" role="status" style="visibility: hidden;" id="account-email-loading">
+                        <span class="sr-only">Loading...</span>
+                    </div><br>
 
                     <button type="button" id="btn-account-email-save" class="btn btn-success float-right" disabled
                             onclick="changeEmail();">Speichern
