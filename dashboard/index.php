@@ -16,7 +16,7 @@ $class_list = $db->getAllStringsFromTable("users", "lastname");
 $user = $db->getStringsFromTable("users", new Key("email", $_SESSION['email']));
 
 $table = "";
-foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
+foreach ($class_list as $value) if ($value['permitted'] == 1) {
     foreach ($value as $key => $element) {
         if ($element == "") {
             $value[$key] = "Kein Eintrag";
@@ -150,9 +150,11 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
                                                                                             placeholder="max.mustermann@mustermail.ch"><br>
                     <small id="account-email-error" class="text-danger"></small>
                     <small id="account-email-success" class="text-success"></small>
-                    <div class="spinner-border text-success" role="status" style="visibility: hidden;" id="account-email-loading">
+                    <div class="spinner-border text-success" role="status" style="visibility: hidden;"
+                         id="account-email-loading">
                         <span class="sr-only">Loading...</span>
-                    </div><br>
+                    </div>
+                    <br>
 
                     <button type="button" id="btn-account-email-save" class="btn btn-success float-right" disabled
                             onclick="changeEmail();">Speichern
@@ -169,7 +171,8 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
             </p>
             <div class="collapse" id="account-password-collapse">
                 <div class="card card-body">
-                    <label for="account-old-pw">Altes Passwort</label><input class="form-control password-change" type="password"
+                    <label for="account-old-pw">Altes Passwort</label><input class="form-control password-change"
+                                                                             type="password"
                                                                              name="old-pw"
                                                                              autocomplete="current-password"
                                                                              id="account-old-pw"><br>
@@ -179,14 +182,16 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
                                                                              id="account-new-pw"
                                                                              autocomplete="new-password"><br>
 
-                    <label for="account-email-repeat">Neues Passwort wiederholen</label><input class="form-control password-change"
-                                                                                               type="password"
-                                                                                               name="new-pw-repeat"
-                                                                                               id="account-new-pw-repeat"
-                                                                                               autocomplete="new-password"><br>
+                    <label for="account-new-pw-repeat">Neues Passwort wiederholen</label><input
+                            class="form-control password-change"
+                            type="password"
+                            name="new-pw-repeat"
+                            id="account-new-pw-repeat"
+                            autocomplete="new-password"><br>
                     <small id="account-password-error" class="text-danger"></small>
                     <small id="account-password-success" class="text-success"></small><br>
-                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right" disabled>Speichern
+                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right" disabled>
+                        Speichern
                     </button>
                 </div>
             </div>
@@ -200,13 +205,13 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
             <div class="overflow-auto">
                 <table class="table">
                     <thead>
-                    <th scope="col">Nachname</th>
-                    <th scope="col">Vorname</th>
-                    <th scope="col">E-Mail</th>
-                    <th scope="col">Wohnadresse</th>
-                    <th scope="col">Mobil-Nr.</th>
-                    <th scope="col">Arbeitgeber</th>
-                    <th scope="col">Hobbys</th>
+                        <th scope="col">Nachname</th>
+                        <th scope="col">Vorname</th>
+                        <th scope="col">E-Mail</th>
+                        <th scope="col">Wohnadresse</th>
+                        <th scope="col">Mobil-Nr.</th>
+                        <th scope="col">Arbeitgeber</th>
+                        <th scope="col">Hobbys</th>
                     </thead>
 
                     <tbody>

@@ -25,7 +25,7 @@ foreach($tasks as $task) {
 <td>{$task['subject']}</td>";
         $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
         $tableContent .= "<td>$date</td>";
-        $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open" value="' . $task['id'] . '">Öffnen</button></td>';
+        $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open" value="' . $task['id'] . '">Details</button></td>';
     }
 }
 

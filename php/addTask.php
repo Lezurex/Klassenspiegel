@@ -14,6 +14,11 @@ if ($_SESSION['email'] != "lenny.angst@easyid.ch") {
     exit();
 }
 
+if ($_POST['title'] == "") {
+    echo "TITEL FEHLT DU KEK";
+    exit();
+}
+
 $db = new DatabaseAdapter();
 
 $date = strtotime($_POST['date']);
