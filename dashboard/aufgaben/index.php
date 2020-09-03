@@ -116,9 +116,9 @@ foreach($tasks as $task) {
                 <option value="BMS">BMS</option>                
                 <option value="TBZ">TBZ</option>
             </select><br>
-            <small class="text-success" id="task-add-success"></small><br>
-            <small class="text-danger" id="task-add-error"></small><br><br>
-            <button class=" btn btn-success" type="button" style="float: right" id="task-add-btn">Hinzufügen</button>
+            <small class="text-success" id="task-add-success"></small>
+            <small class="text-danger" id="task-add-error"></small>
+            <button class=" btn btn-success" type="button" style="margin-top: 50px; float: right" id="task-add-btn">Hinzufügen</button>
         </div>
     </div>';
     }
