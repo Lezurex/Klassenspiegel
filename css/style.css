@@ -5,21 +5,26 @@
     margin: 0 auto;
     width: 100%;
     vertical-align: middle;
+    height: 70px;
 }
 
-ul {
+#navbar ul {
     margin: 0;
     padding: 0;
+    height: 70px;
+    display: inline;
 }
 
-li {
+#navbar li {
     float: left;
     padding: 8px;
-    display: inline-block;
+    display: table;
+    height: 70px;
 }
 
-li a {
-    display: block;
+#navbar li a {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #nav-title {

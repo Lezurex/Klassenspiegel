@@ -186,7 +186,7 @@ foreach ($class_list as $key => $value) if ($value['permitted'] == 1) {
                                                                                                autocomplete="new-password"><br>
                     <small id="account-password-error" class="text-danger"></small>
                     <small id="account-password-success" class="text-success"></small><br>
-                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right">Speichern
+                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right" disabled>Speichern
                     </button>
                 </div>
             </div>

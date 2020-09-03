@@ -14,9 +14,9 @@ function getNavbar($session) {
         </li>';
 
     if (!isset($session['email'])) {
-        $navbar .= '<li class="float-right"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login" id="btn-login">
+        $navbar .= '<li class="float-right"><a><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login" id="btn-login">
     Login
-        </button>';
+        </button></a>';
     } else
         $navbar .= '
 <li><a href="/dashboard/aufgaben">Aufgaben</a></li>
