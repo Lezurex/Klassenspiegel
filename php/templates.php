@@ -32,3 +32,8 @@ function getNavbar($session) {
 </nav>';
     return $navbar;
 }
+
+function getFooter() {
+    $footer = '<footer class="footer" style="text-align: center; background-color: #dadada;"><p>v1.3.1</p></footer>';
+    return $footer;
+}

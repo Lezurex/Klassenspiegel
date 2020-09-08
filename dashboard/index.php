@@ -230,6 +230,8 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
     </div>
 </div>
 
+<?php echo getFooter(); ?>
+
 
 </body>
 

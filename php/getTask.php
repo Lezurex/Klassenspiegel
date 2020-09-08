@@ -22,7 +22,7 @@ echo
                 </button>
             </div>
             <div class='modal-body'>
-                <p>Beschreibung: {$task['description']}</p>
+                <p>Beschreibung:<br>" . nl2br($task['description']) . "</p>
                 <p>Fällig am: {$date}</p>
                 <p>Fach: {$task['subject']}</p>
             </div>
