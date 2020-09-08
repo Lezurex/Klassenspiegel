@@ -121,6 +121,13 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
                 <label for="edit-hobbys">Hobbys</label><input class="form-control edit-input" type="text" name="hobbys"
                                                               id="edit-hobbys" placeholder="Hobbys"
                                                               value="<?php echo $user['hobbys']; ?>"><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="edit-bms" name="bms" <?php if ($user['isBms'] == 1)
+                        echo "checked"; ?>>
+                    <label class="form-check-label edit-input" for="edit-bms">
+                        BMS?
+                    </label>
+                </div>
                 <small class="text-success" id="edit-status"></small><br><br>
                 <button type="button" id="btn-edit-save" class="btn btn-success float-right">Speichern</button>
             </form>

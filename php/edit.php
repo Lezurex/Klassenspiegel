@@ -22,6 +22,7 @@ $db->updateValues("users", new Key("email", $_SESSION['email']),
     new Insert("location", $_POST['location']),
     new Insert("phone", $_POST['phone']),
     new Insert("company", $_POST['company']),
-    new Insert("hobbys", $_POST['hobbys']));
+    new Insert("hobbys", $_POST['hobbys']),
+    new Insert("isBms", $_POST['bms']));
 
 echo "200";

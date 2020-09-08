@@ -33,13 +33,20 @@ $().ready(function () {
 });
 
 function edit() {
+    let isBMS;
+    if ($("#edit-bms").is(":checked")) {
+        isBMS = 1;
+    } else
+        isBMS = 0;
+
     let data = {
         'firstname':$("#edit-firstname").val(),
         'lastname':$("#edit-lastname").val(),
         'location':$("#edit-location").val(),
         'phone':$("#edit-phone").val(),
         'company':$("#edit-company").val(),
-        'hobbys':$("#edit-hobbys").val()
+        'hobbys':$("#edit-hobbys").val(),
+        'bms':isBMS
     };
     $.ajax({
         method:"POST",

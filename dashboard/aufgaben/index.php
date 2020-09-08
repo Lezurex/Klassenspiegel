@@ -10,24 +10,40 @@ if (!isset($_SESSION['email'])) {
 }
 
 $db = new DatabaseAdapter();
+$isBMS = $db->getIntegerFromTable("users", "isBms", new Key("email", $_SESSION['email']));
 
 $tasks = $db->getAllStringsFromTable("tasks", "date");
 $tableContent = "";
 
-if($tasks == null) {
+if ($tasks == null) {
     $tableContent = "<td>Keine Aufgaben!</td><td></td><td></td><td></td><td></td>";
 } else {
-foreach($tasks as $task) {
-    if($task['date'] > time()) {
-        $tableContent .= "<tr>";
-        $tableContent .= "<td>{$task['id']}</td>
+    foreach ($tasks as $task) {
+        if ($task['category'] == "BMS") {
+            if ($isBMS == 1) {
+                if ($task['date'] > time()) {
+                    $tableContent .= "<tr>";
+                    $tableContent .= "<td>{$task['id']}</td>
 <td>{$task['title']}</td>
 <td>{$task['subject']}</td>";
-        $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
-        $tableContent .= "<td>$date</td>";
-        $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open" value="' . $task['id'] . '">Details</button></td>';
+                    $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
+                    $tableContent .= "<td>$date</td>";
+                    $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open" value="' . $task['id'] . '">Details</button></td>';
+                }
+            }
+
+        } else {
+            if ($task['date'] > time()) {
+                $tableContent .= "<tr>";
+                $tableContent .= "<td>{$task['id']}</td>
+<td>{$task['title']}</td>
+<td>{$task['subject']}</td>";
+                $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
+                $tableContent .= "<td>$date</td>";
+                $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open" value="' . $task['id'] . '">Details</button></td>';
+            }
+        }
     }
-}
 
 }
 
@@ -58,7 +74,7 @@ foreach($tasks as $task) {
 </head>
 <body>
 
-<?php echo getNavbar($_SESSION);?>
+<?php echo getNavbar($_SESSION); ?>
 
 <div class="modal fade" id="modal-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -68,7 +84,8 @@ foreach($tasks as $task) {
     </div>
 </div>
 
-<h1 class="text-center" style="margin-top: 50px;">Aufgaben</h1>
+<h1 class="text-center" style="margin-top: 50px;">Aufgaben & Prüfungen</h1>
+<p class="text-center">Alle Angaben ohne Gewähr</p>
 
 <div class="card-deck" style="margin: 50px 5%">
     <div class="card">
@@ -87,7 +104,7 @@ foreach($tasks as $task) {
                 </tr>
                 </thead>
                 <tbody>
-                    <?php echo $tableContent ?>
+                <?php echo $tableContent ?>
                 </tbody>
             </table>
         </div>
@@ -110,7 +127,7 @@ foreach($tasks as $task) {
                 <option value="Naturwissenschaften & Chemie">Naturwissenschaften & Chemie</option>
                 <option value="Wirtschaft & Recht">Wirtschaft & Recht</option>
                 <option value="Modul 100">Modul 100</option>
-                <option value="Modul 100">Modul 117</option>
+                <option value="Modul 117">Modul 117</option>
             </select><br>
             <select class="form-control" id="task-add-category">
                 <option value="BMS">BMS</option>                

@@ -11,6 +11,7 @@ class Database {
 
     public static function connect() {
         self::$con = mysqli_connect(self::$host, self::$user, self::$password, self::$database);
+        self::$con->set_charset("utf8");
     }
 
     public static function disconnect() {
