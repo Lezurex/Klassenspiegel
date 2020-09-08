@@ -119,7 +119,7 @@ if ($tasks == null) {
         <div class="card-body">
             <input class="form-control" id="task-add-title" placeholder="Titel"><br>
             <textarea class="form-control" id="task-add-description" placeholder="Beschreibung"></textarea><br>
-            <input type="datetime-local" class="form-control" id="task-add-date"><br>
+            <input type="datetime-local" class="form-control" id="task-add-date" placeholder="Datum & Uhrzeit"><br>
             <select class="form-control" id="task-add-subject">
                 <option value="Mathematik">Mathematik</option>
                 <option value="Französisch">Französisch</option>

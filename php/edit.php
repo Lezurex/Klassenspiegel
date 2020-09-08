@@ -17,12 +17,12 @@ if(!preg_match("/^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-
 $db = new DatabaseAdapter();
 
 $db->updateValues("users", new Key("email", $_SESSION['email']),
-    new Insert("lastname", $_POST['lastname']),
-    new Insert("firstname", $_POST['firstname']),
-    new Insert("location", $_POST['location']),
-    new Insert("phone", $_POST['phone']),
-    new Insert("company", $_POST['company']),
-    new Insert("hobbys", $_POST['hobbys']),
+    new Insert("lastname", strip_tags($_POST['lastname'], '<a><p><strong><i>')),
+    new Insert("firstname", strip_tags($_POST['firstname'], '<a><p><strong><i>')),
+    new Insert("location", strip_tags($_POST['location'], '<a><p><strong><i>')),
+    new Insert("phone", strip_tags($_POST['phone'], '<a><p><strong><i>')),
+    new Insert("company", strip_tags($_POST['company'], '<a><p><strong><i>')),
+    new Insert("hobbys", strip_tags($_POST['hobbys'], '<a><p><strong><i>')),
     new Insert("isBms", $_POST['bms']));
 
 echo "200";
