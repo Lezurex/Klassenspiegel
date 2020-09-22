@@ -10,12 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add nl2br() function for Line breaks">
-      <change afterPath="$PROJECT_DIR$/php/mail.json" afterDir="false" />
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add private mail config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/aufgaben/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/aufgaben/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/mail-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/mail-config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/templates.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates.php" afterDir="false" />
     </list>
@@ -97,7 +95,7 @@
       <workItem from="1600156179296" duration="25000" />
       <workItem from="1600156225125" duration="1998000" />
       <workItem from="1600766306853" duration="679000" />
-      <workItem from="1600771965051" duration="873000" />
+      <workItem from="1600771965051" duration="5506000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -232,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599557715557</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add private mail config">
+      <created>1600773040933</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1600773040933</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +275,8 @@
     <MESSAGE value="Add BMS tasks not showing up as TBZ student" />
     <MESSAGE value="Security and bugfixes" />
     <MESSAGE value="Add nl2br() function for Line breaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add nl2br() function for Line breaks" />
+    <MESSAGE value="Add private mail config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add private mail config" />
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="289" key="#Composer" timestamp="1598648072522">
@@ -333,10 +339,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1599557722174">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600773260593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599557722174" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600773260593" />
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1598647311967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -353,6 +359,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598529691665" />
+    <state x="533" y="198" key="git4idea.ui.GitUnstashDialog" timestamp="1600772954999">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="198" key="git4idea.ui.GitUnstashDialog/0.0.1536.824@0.0.1536.824" timestamp="1600772954999" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1599113678236">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

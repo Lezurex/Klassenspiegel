@@ -135,6 +135,7 @@ global $class_name;
         </div>
     </div>
 </div>
+<?php echo getFooter(); ?>
 
 <script src="js/login.js"></script>
 <script src="js/register.js"></script>

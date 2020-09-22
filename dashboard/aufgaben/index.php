@@ -142,7 +142,7 @@ if ($tasks == null) {
 
     ?>
 </div>
-
+<?php echo getFooter(); ?>
 
 </body>
 </html>

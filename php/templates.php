@@ -1,7 +1,7 @@
 <?php
 
 $class_name = "AP20b";
-$version = "v1.3.1";
+$version = "v1.3.2";
 
 function getNavbar($session) {
     global $class_name;
@@ -37,5 +37,12 @@ function getNavbar($session) {
 function getFooter() {
     global $version;
     $footer = '<footer class="footer" style="text-align: center; background-color: #dadada;"><p>' . $version . '</p></footer>';
+    $footer = '
+<footer class="page-footer font-small" style="background-color: #dadada">
+  <div class="footer-copyright text-center py-3">© 2020 Lenny Angst
+    • <a href="https://github.com/Lezurex" target="_blank">GitHub</a>
+    • ' . $version . '
+  </div>
+</footer>';
     return $footer;
 }
