@@ -1,6 +1,7 @@
 <?php
 
 $class_name = "AP20b";
+$version = "v1.3.1";
 
 function getNavbar($session) {
     global $class_name;
@@ -34,6 +35,7 @@ function getNavbar($session) {
 }
 
 function getFooter() {
-    $footer = '<footer class="footer" style="text-align: center; background-color: #dadada;"><p>v1.3.1</p></footer>';
+    global $version;
+    $footer = '<footer class="footer" style="text-align: center; background-color: #dadada;"><p>' . $version . '</p></footer>';
     return $footer;
 }

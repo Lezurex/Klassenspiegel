@@ -14,6 +14,10 @@ if(!preg_match("/^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-
     exit();
 }
 
+if($_POST['bms'] != '1' && $_POST['bms'] != '0') {
+    echo "Hör auf zu hacken du kleiner kek";
+}
+
 $db = new DatabaseAdapter();
 
 $db->updateValues("users", new Key("email", $_SESSION['email']),

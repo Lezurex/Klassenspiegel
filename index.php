@@ -36,15 +36,15 @@ global $class_name;
 <?php echo getNavbar($_SESSION); ?>
 
 <h1 class="text-center" style="margin-top: 50px">Klasse <?php echo $class_name; ?></h1>
-<p class="text-center">Das Webportal der Klasse</p>
+<p role="doc-introduction" class="text-center">Das Webportal der Klasse</p>
 
 <!-- Login Modal -->
 <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Einloggen</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Schliessen" style="outline: none;">
+            <div class="modal-header" role="heading">
+                <h5 role="heading" class="modal-title">Einloggen</h5>
+                <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen" style="outline: none;">
                     <span aria-hidden="true" style="outline: none">&times;</span>
                 </button>
             </div>
@@ -52,7 +52,7 @@ global $class_name;
                 <div class="form-group">
                     <label for="login-email">E-Mail</label>
                     <input type="email" class="form-control" id="login-email"
-                           placeholder="max.mustermann@mustermail.ch" autocomplete="username">
+                           placeholder="max.mustermann@mustermail.ch" autocomplete="username" aria-labelledby="login-email">
                 </div>
                 <div class="form-group">
                     <label for="login-password">Passwort</label>
@@ -130,6 +130,7 @@ global $class_name;
             <h3 style="margin-top: 20px">Quizlet (BMS)</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/langenscheidt-franzosisch" target="_blank">Französisch</a></li>
+                <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/chemie" target="_blank">Chemie</a></li>
             </ul>
         </div>
     </div>

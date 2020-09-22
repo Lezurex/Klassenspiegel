@@ -7,18 +7,20 @@ use PHPMailer\PHPMailer\Exception;
 require "../vendor/autoload.php";
 
 function sendEmail($to, $subject, $message) {
+    $config = json_decode(file_get_contents("./mail.json"), true);
+
     //PHPMailer Object
     $mail = new PHPMailer(true);
 
     $mail->SMTPDebug  = SMTP::DEBUG_OFF;
 
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->Host       = $config['host'];                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'klasseap20b@gmail.com';                     // SMTP username
-    $mail->Password   = '$87YrCnlRS!v';                               // SMTP password
+    $mail->Username   = $config['username'];                     // SMTP username
+    $mail->Password   = $config['password'];                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;
+    $mail->Port       = $config['port'];
     $mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer' => false,
@@ -28,14 +30,14 @@ function sendEmail($to, $subject, $message) {
     );
 
     //From email address and name
-    $mail->From = "klasseap20b@gmail.com";
-    $mail->FromName = "Klasse AP20b";
+    $mail->From = $config['from'];
+    $mail->FromName = $config['from_name'];
 
     //To address and name
     $mail->addAddress($to);
 
     //Address to which recipient will reply
-    $mail->addReplyTo("klasseap20b@gmail.com", "Reply");
+    $mail->addReplyTo($config['from'], "Reply");
 
     //Send HTML or Plain Text email
     $mail->isHTML(true);
