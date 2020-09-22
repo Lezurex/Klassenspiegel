@@ -36,10 +36,10 @@ function getNavbar($session) {
 
 function getFooter() {
     global $version;
-    $footer = '<footer class="footer" style="text-align: center; background-color: #dadada;"><p>' . $version . '</p></footer>';
     $footer = '
-<footer class="page-footer font-small" style="background-color: #dadada">
-  <div class="footer-copyright text-center py-3">© 2020 Lenny Angst
+<div style="height: 50px"></div>
+<footer class="page-footer font-small" style="">
+  <div class="footer-copyright text-center py-3 footer">© 2020 Lenny Angst
     • <a href="https://github.com/Lezurex" target="_blank">GitHub</a>
     • ' . $version . '
   </div>

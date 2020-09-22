@@ -2,19 +2,16 @@ html, body {
     height: 100%;
     margin: 0;
 }
-.wrapper {
-    min-height: 100%;
-
-    /* Equal to height of footer */
-    /* But also accounting for potential margin-bottom of last child */
-    margin-bottom: -50px;
-}
-.footer,
-.push {
-    height: 50px;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #dadada;
 }
 
 #navbar {
+    margin-top: 70px;
     background-color: #dadada;
     overflow: hidden;
     box-shadow: 0 6px 5px 0 rgba(0,0,0,0.3);
