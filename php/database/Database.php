@@ -3,14 +3,13 @@
 
 class Database {
     public static $host = "192.168.1.150";
-    public static $user = "ap20b";
-    public static $password = "Ru0ZRr*Q903!";
     public static $port = 3306;
     public static $database = "klassenspiegel";
     public static $con;
 
     public static function connect() {
-        self::$con = mysqli_connect(self::$host, self::$user, self::$password, self::$database);
+        $json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/../database.json"), true);
+        self::$con = mysqli_connect(self::$host, $json['username'], $json['password'], self::$database);
         self::$con->set_charset("utf8");
     }
 

@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require "../vendor/autoload.php";
 
 function sendEmail($to, $subject, $message) {
-    $config = json_decode(file_get_contents("./../../mail.json"), true);
+    $config = json_decode(file_get_contents("./../../mail.json "), true);
 
     //PHPMailer Object
     $mail = new PHPMailer(true);
