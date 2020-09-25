@@ -7,6 +7,9 @@ class Database {
     public static $database = "klassenspiegel";
     public static $con;
 
+    /*
+     * Connects to the database with credentials from database.json
+     */
     public static function connect() {
         $json = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/../database.json"), true);
         self::$con = mysqli_connect(self::$host, $json['username'], $json['password'], self::$database);
@@ -23,6 +26,9 @@ class Database {
         return self::$con != null;
     }
 
+    /**
+     * @return mysqli connection
+     */
     public static function getConnection() {
         return self::$con;
     }
