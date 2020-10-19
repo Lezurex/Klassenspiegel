@@ -309,21 +309,24 @@ class DatabaseAdapter {
         $length = sizeof($keys);
 
         if($length != 0) {
+            $stringBuilder .= "WHERE ";
             foreach ($keys as $key) {
                 if($length == 1) {
-                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "'";
+                    $stringBuilder .= $key->getColumn() . " = '" . $key->getKeyWord() . "'";
                 } else {
-                    $stringBuilder .= "WHERE " . $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
+                    $stringBuilder .= $key->getColumn() . " = '" . $key->getKeyWord() . "' AND ";
                     $length--;
                 }
             }
         }
         try {
             $result = mysqli_query(Database::getConnection(), $stringBuilder);
-            if(mysqli_num_rows($result) == 0) {
-                return false;
-            } else
-                return true;
+            if ($result != false) {
+                if (mysqli_num_rows($result) == 0) {
+                    return false;
+                } else
+                    return true;
+            }
         } catch (mysqli_sql_exception $exception) {
 
         }

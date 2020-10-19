@@ -1,7 +1,8 @@
 # Website der Klasse AP20b
 
 Dies ist der Source-Code des Webportals der Klasse AP20b an der TBZ.<br>
-Aktuell ist dieses System nicht anpassbar, jedoch darf dies gerne als Inspiration genutzt werden.
+Aktuell ist dieses System nicht anpassbar, jedoch darf dies gerne als Inspiration genutzt werden.<br>
+Eine aktuelle Version ist [hier](https://ap20b.lezurex.com/) einsehbar.
 
 ## Idee
 Die Idee dazu ist in einer Unterrichtsstunde des Modules 100 entstanden, als ich einen Klassenspiegel der Klasse 
