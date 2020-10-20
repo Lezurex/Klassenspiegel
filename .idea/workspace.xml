@@ -10,10 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add better footer&#10;Change mail-config location">
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add external database config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/database/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/mail-config.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/mail-config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/editTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/editTask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/getTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/getTask.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +62,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Supercraft" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/php" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Klassenspiegel\php" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -95,7 +100,9 @@
       <workItem from="1600766306853" duration="679000" />
       <workItem from="1600771965051" duration="5506000" />
       <workItem from="1600858031344" duration="150000" />
-      <workItem from="1601029938130" duration="323000" />
+      <workItem from="1601029938130" duration="752000" />
+      <workItem from="1601030838486" duration="6187000" />
+      <workItem from="1603181719583" duration="959000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -237,7 +244,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600773040933</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add external database config">
+      <created>1601030524988</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1601030524988</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add tasks editable">
+      <created>1601044522952</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1601044522952</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +297,9 @@
     <MESSAGE value="Security and bugfixes" />
     <MESSAGE value="Add nl2br() function for Line breaks" />
     <MESSAGE value="Add private mail config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add private mail config" />
+    <MESSAGE value="Add external database config" />
+    <MESSAGE value="Add tasks editable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tasks editable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="289" key="#Composer" timestamp="1598648072522">
@@ -331,6 +354,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1599121805603" />
+    <state x="593" y="31" key="RollbackChangesDialog" timestamp="1601044995939">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="593" y="31" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601044995939" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1598776339024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -339,22 +366,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600773260593">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601044524511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600773260593" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601044524511" />
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1598647311967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598647311967" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600766308243">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603139314969">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1600766308243" />
-    <state x="479" y="0" width="577" height="824" key="find.popup" timestamp="1598905006620">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603139314969" />
+    <state x="479" y="0" width="577" height="824" key="find.popup" timestamp="1603181878987">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="479" y="0" width="577" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1598905006620" />
+    <state x="479" y="0" width="577" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1603181878987" />
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1598529691665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

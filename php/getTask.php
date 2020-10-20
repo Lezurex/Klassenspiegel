@@ -23,7 +23,7 @@ if ($_SESSION['email'] == "lenny.angst@easyid.ch") {
                 </button>
             </div>
             <div class='modal-body'>
-                <textarea class='form-control' id='task-edit-description' placeholder='Beschreibung'>" . $task['description'] . "</textarea><br>
+                <textarea class='form-control' id='task-edit-description' rows='10' placeholder='Beschreibung'>" . $task['description'] . "</textarea><br>
                 <input type='datetime-local' class='form-control' id='task-edit-date' placeholder='Datum & Uhrzeit' value='$date'><br>
                 <select class='form-control' id='task-edit-subject'>
                 <option value='Mathematik'>Mathematik</option>
@@ -42,13 +42,13 @@ if ($_SESSION['email'] == "lenny.angst@easyid.ch") {
 </select>";
             break;
         case "TBZ":
-            $exit .= "<select class='form-control' id='task-edit-save'>
+            $exit .= "<select class='form-control' id='task-edit-category'>
     <option value='BMS'>BMS</option>
     <option selected value='TBZ'>TBZ</option>
 </select>";
     }
     $exit .= "<input value='{$task['id']}' id='task-edit-id' style='display: none'>
-<input value='{$task['subject']}' id='task-edit-subject-id' style='display: none'>
+<input value='{$task['subject']}' id='task-edit-subject' style='display: none'>
 <small class='text-success' id='task-edit-success'></small>
 <small class='text-danger' id='task-edit-error'></small>
 </div><div class='modal-footer'>

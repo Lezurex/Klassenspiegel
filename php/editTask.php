@@ -23,7 +23,8 @@ $db = new DatabaseAdapter();
 
 $date = strtotime($_POST['date']);
 
-$db->updateValues("tasks", new Key("id", $_POST['id']), new Insert("title", $_POST['title']),
+$db->updateValues("tasks", new Key("id", $_POST['id']),
+    new Insert("title", $_POST['title']),
     new Insert("description", $_POST['description']),
     new Insert("date", $date),
     new Insert("subject", $_POST['subject']),
