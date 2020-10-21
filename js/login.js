@@ -94,7 +94,7 @@ function login() {
             } else if (data == "905") {
                 $("#login-http-error").html("Dein Konto wurde noch nicht freigeschaltet. Wende dich bei einer längeren Wartezeit an den Websiteadministrator.");
             } else if (data == "200") {
-                window.location.href = "/dashboard";
+                window.location.href = "/dashboard/aufgaben";
             } else {
                 $("#login-http-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
             }
