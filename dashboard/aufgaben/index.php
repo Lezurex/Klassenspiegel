@@ -22,7 +22,7 @@ if ($tasks == null) {
         if ($task['category'] == "BMS") {
             if ($isBMS == 1) {
                 if ($task['date'] > time()) {
-                    $tableContent .= "<tr>";
+                    $tableContent .= "<tr data-id='{$task['id']}' class='task-element'>";
                     $tableContent .= "<td>{$task['id']}</td>
 <td>{$task['title']}</td>
 <td>{$task['subject']}</td>";
@@ -34,7 +34,7 @@ if ($tasks == null) {
 
         } else {
             if ($task['date'] > time()) {
-                $tableContent .= "<tr>";
+                $tableContent .= "<tr data-id='{$task['id']}' class='task-element'>";
                 $tableContent .= "<td>{$task['id']}</td>
 <td>{$task['title']}</td>
 <td>{$task['subject']}</td>";

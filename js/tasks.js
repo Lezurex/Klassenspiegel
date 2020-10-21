@@ -7,6 +7,14 @@ $().ready(function () {
         });
     });
 
+    $(".task-element").each(function () {
+        $(this).on("click", function (e) {
+            e.preventDefault();
+            buildModal($(this).data("id"))
+            $("#modal-task").modal("show");
+        });
+    });
+
     $("#task-add-btn").on("click", function (e) {
         e.preventDefault();
         addTask();
