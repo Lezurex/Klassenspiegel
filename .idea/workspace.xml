@@ -6,23 +6,16 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Close #3&#10;Add task list element clickeable">
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add better footer&#10;Change mail-config location">
+      <change afterPath="$PROJECT_DIR$/js/reset.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/templates.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -71,7 +64,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DiscordAPI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Supercraft" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -94,11 +87,17 @@
       <workItem from="1598905267636" duration="1324000" />
       <workItem from="1598938451566" duration="11728000" />
       <workItem from="1599036524014" duration="76000" />
-      <workItem from="1599046905663" duration="6361000" />
-      <workItem from="1601223281237" duration="2000" />
-      <workItem from="1602486741450" duration="13000" />
-      <workItem from="1602791362051" duration="3456000" />
-      <workItem from="1602831040534" duration="8577000" />
+      <workItem from="1599046905663" duration="9901000" />
+      <workItem from="1599112728246" duration="9360000" />
+      <workItem from="1599125262927" duration="1140000" />
+      <workItem from="1599153291950" duration="941000" />
+      <workItem from="1599545231927" duration="7282000" />
+      <workItem from="1600156179296" duration="25000" />
+      <workItem from="1600156225125" duration="1998000" />
+      <workItem from="1600766306853" duration="679000" />
+      <workItem from="1600771965051" duration="5506000" />
+      <workItem from="1600858031344" duration="150000" />
+      <workItem from="1601029938130" duration="323000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -184,21 +183,63 @@
       <option name="project" value="LOCAL" />
       <updated>1598958128489</updated>
     </task>
-    <task id="LOCAL-00013" summary="Fix footer">
-      <created>1600794726013</created>
+    <task id="LOCAL-00013" summary="Add password change&#10;Fix verify when token already in database">
+      <created>1599054123890</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1600794726013</updated>
+      <updated>1599054123891</updated>
     </task>
-    <task id="LOCAL-00014" summary="Close #3&#10;Add task list element clickeable">
-      <created>1603287492545</created>
+    <task id="LOCAL-00014" summary="Add task system&#10;Fix various bugs">
+      <created>1599122843778</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1603287492545</updated>
+      <updated>1599122843778</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Enhancements">
+      <created>1599125939944</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1599125939944</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Enhancements">
+      <created>1599126046890</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1599126046890</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add BMS tasks not showing up as TBZ student">
+      <created>1599548465317</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1599548465317</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Security and bugfixes">
+      <created>1599549080599</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1599549080599</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add nl2br() function for Line breaks">
+      <created>1599557715557</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1599557715557</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add private mail config">
+      <created>1600773040933</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1600773040933</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,9 +271,14 @@
     <MESSAGE value="Hotfix login validation" />
     <MESSAGE value="Add E-Mail change verification" />
     <MESSAGE value="Add password change frontend&#10;Fix register button bug" />
-    <MESSAGE value="Fix footer" />
-    <MESSAGE value="Close #3&#10;Add task list element clickeable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Close #3&#10;Add task list element clickeable" />
+    <MESSAGE value="Add password change&#10;Fix verify when token already in database" />
+    <MESSAGE value="Add task system&#10;Fix various bugs" />
+    <MESSAGE value="Enhancements" />
+    <MESSAGE value="Add BMS tasks not showing up as TBZ student" />
+    <MESSAGE value="Security and bugfixes" />
+    <MESSAGE value="Add nl2br() function for Line breaks" />
+    <MESSAGE value="Add private mail config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add private mail config" />
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="289" key="#Composer" timestamp="1598648072522">
@@ -263,11 +309,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="197" key="#org.intellij.plugins.intelliLang.inject.config.ui.BaseInjectionDialog/0.0.1536.824@0.0.1536.824" timestamp="1598536878037" />
-    <state x="915" y="282" key="FileChooserDialogImpl" timestamp="1602486752233">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="532" y="323" width="472" height="315" key="ComposerInitDialogKey" timestamp="1600772774203">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599036596571" />
-    <state x="915" y="282" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1602486752233" />
+    <state x="532" y="323" width="472" height="315" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1600772774203" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1599204303997">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599204303997" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1598537012846">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -280,15 +329,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="399" y="166" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598777115265" />
-    <state x="-1150" y="587" key="NewPhpClassDialog" timestamp="1602791909064">
-      <screen x="-1920" y="360" width="1920" height="1040" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1599121805603">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-1150" y="587" key="NewPhpClassDialog/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1602791909064" />
-    <state x="-1165" y="784" key="NewPhpFileDialog" timestamp="1602845064713">
-      <screen x="-1920" y="360" width="1920" height="1040" />
-    </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1599052146293" />
-    <state x="-1165" y="784" key="NewPhpFileDialog/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1602845064713" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1599121805603" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1598776339024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -297,19 +341,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1603287494097">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600773260593">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598958137223" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1603287494097" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600773260593" />
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1598647311967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598647311967" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598905025585">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600766308243">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1598905025585" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1600766308243" />
     <state x="479" y="0" width="577" height="824" key="find.popup" timestamp="1598905006620">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -318,10 +361,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598529691665" />
-    <state x="-1136" y="645" key="refactoring.ChangeSignatureDialog" timestamp="1602792136359">
-      <screen x="-1920" y="360" width="1920" height="1040" />
+    <state x="533" y="198" key="git4idea.ui.GitUnstashDialog" timestamp="1600772954999">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-1136" y="645" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1602792136359" />
+    <state x="533" y="198" key="git4idea.ui.GitUnstashDialog/0.0.1536.824@0.0.1536.824" timestamp="1600772954999" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1599113678236">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1599113678236" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598904929205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

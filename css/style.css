@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
 .footer {
     position: fixed;
     left: 0;
@@ -13,7 +14,7 @@ html, body {
 #navbar {
     background-color: #dadada;
     overflow: hidden;
-    box-shadow: 0 6px 5px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 6px 5px 0 rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     width: 100%;
     vertical-align: middle;
@@ -55,4 +56,14 @@ html, body {
 .link-unstyled:hover, .link-unstyled:focus {
     color: inherit;
     text-decoration: none;
+}
+
+.modal-content {
+    transition: 1s;
+}
+
+.reset-code {
+    width: 11ch;
+    margin: 0 auto;
+    text-align: center;
 }

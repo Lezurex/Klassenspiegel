@@ -44,7 +44,8 @@ global $class_name;
         <div class="modal-content">
             <div class="modal-header" role="heading">
                 <h5 role="heading" class="modal-title">Einloggen</h5>
-                <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen" style="outline: none;">
+                <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen"
+                        style="outline: none;">
                     <span aria-hidden="true" style="outline: none">&times;</span>
                 </button>
             </div>
@@ -52,7 +53,8 @@ global $class_name;
                 <div class="form-group">
                     <label for="login-email">E-Mail</label>
                     <input type="email" class="form-control" id="login-email"
-                           placeholder="max.mustermann@mustermail.ch" autocomplete="username" aria-labelledby="login-email">
+                           placeholder="max.mustermann@mustermail.ch" autocomplete="username"
+                           aria-labelledby="login-email">
                 </div>
                 <div class="form-group">
                     <label for="login-password">Passwort</label>
@@ -61,6 +63,7 @@ global $class_name;
                     <small id="login-error" class="form-text" style="color: red;"></small>
                     <small id="login-http-error" class="form-text" style="color: red;"></small>
                 </div>
+                <a href="#" id="login-btn-reset">Passwort vergessen?</a>
             </div>
             <div class="modal-footer">
                 <a id="login-btn-register" class="float-left">Noch kein Konto?</a>
@@ -113,32 +116,84 @@ global $class_name;
     </div>
 </div>
 
-<div class="card-deck" style="margin: 50px 5%">
-    <div class="card"">
-        <div class="card-header">Nützliche Links</div>
-        <div class="card-body">
-            <h3>TBZ</h3>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="https://ecolm.com" target="_blank">Ecolm TBZ</a></li>
-                <li class="list-group-item"><a href="https://bscw.tbz.ch/bscw/bscw.cgi" target="_blank">BSCW TBZ</a></li>
-                <li class="list-group-item"><a href="https://edu.juergarnold.ch/" target="_blank">edu.JuergArnold.ch</a></li>
-            </ul>
-            <h3 style="margin-top: 20px">BMZ</h3>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="https://intranet.tam.ch/bmz/" target="_blank">Intranet BMZ</a></li>
-            </ul>
-            <h3 style="margin-top: 20px">Quizlet (BMS)</h3>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/langenscheidt-franzosisch" target="_blank">Französisch</a></li>
-                <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/chemie" target="_blank">Chemie</a></li>
-            </ul>
+<!--Reset-->
+<div class="modal fade" id="modal-reset" tabindex="-1" role="dialog" aria-labelledby="modal-reset" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="reset-content1">
+            <div class="modal-header" role="heading">
+                <h5 role="heading" class="modal-title">Passwort zurücksetzen</h5>
+                <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen"
+                        style="outline: none;">
+                    <span aria-hidden="true" style="outline: none">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="reset-email">E-Mail</label>
+                    <input type="email" class="form-control" id="reset-email"
+                           placeholder="max.mustermann@mustermail.ch" autocomplete="username"
+                           aria-labelledby="login-email">
+                </div>
+                <small id="reset-error" class="form-text" style="color: red;"></small>
+                <small id="reset-http-error" class="form-text" style="color: red;"></small>
+                <small class="form-text">Du erhältst eine E-Mail mit einem Code.</small>
+            </div>
+            <div class="modal-footer">
+                <button id="reset-reset-btn" type="button" class="btn btn-danger float-right">Passwort zurücketzen</button>
+            </div>
+        </div>
+        <div class="modal-content" id="reset-content2" style="display: none">
+            <!-- TODO add reset code input -->
+            <div class="modal-header" role="heading">
+                <h5 role="heading" class="modal-title">Passwort zurücksetzen</h5>
+                <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen"
+                        style="outline: none;">
+                    <span aria-hidden="true" style="outline: none">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Ein Verifikationscode wurde nun an <strong id="reset2-strong-mail"></strong> gesendet! Gib diesen nun hier ein.
+                Sieh eventuell auch im Spam-Ordner nach!</p><br>
+                <input class="form-control form-control-lg reset-code" placeholder="123456" maxlength="6" minlength="6">
+            </div>
+            <div class="modal-footer">
+                <button id="reset-reset-btn" type="button" class="btn btn-danger float-right">Passwort zurücketzen</button>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="card-deck" style="margin: 50px 5%">
+    <div class="card"
+    ">
+    <div class="card-header">Nützliche Links</div>
+    <div class="card-body">
+        <h3>TBZ</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="https://ecolm.com" target="_blank">Ecolm TBZ</a></li>
+            <li class="list-group-item"><a href="https://bscw.tbz.ch/bscw/bscw.cgi" target="_blank">BSCW TBZ</a></li>
+            <li class="list-group-item"><a href="https://edu.juergarnold.ch/" target="_blank">edu.JuergArnold.ch</a>
+            </li>
+        </ul>
+        <h3 style="margin-top: 20px">BMZ</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="https://intranet.tam.ch/bmz/" target="_blank">Intranet BMZ</a></li>
+        </ul>
+        <h3 style="margin-top: 20px">Quizlet (BMS)</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/langenscheidt-franzosisch"
+                                           target="_blank">Französisch</a></li>
+            <li class="list-group-item"><a href="https://quizlet.com/Lezurex/folders/chemie" target="_blank">Chemie</a>
+            </li>
+        </ul>
+    </div>
+</div>
 </div>
 <?php echo getFooter(); ?>
 
 <script src="js/login.js"></script>
 <script src="js/register.js"></script>
+<script src="js/reset.js"></script>
 </body>
 
 </html>

@@ -11,8 +11,7 @@ class App
      * @param $email
      * @return bool|null
      */
-    public static function validateKey($token, $email)
-    {
+    public static function validateKey($token, $email) {
         $db = new DatabaseAdapter();
         if ($db->containsEntry("access_tokens", new Key("email", $email), new Key("token", $token))) {
             return true;
@@ -25,8 +24,7 @@ class App
         }
     }
 
-    public static function login($email, $password)
-    {
+    public static function login($email, $password) {
         $db = new DatabaseAdapter();
         if (!$db->containsEntry("users", new Key("email", $email))) {
             return "WRONG_LOGIN";
