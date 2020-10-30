@@ -123,7 +123,7 @@ resetBtn.on("click", function () {
 });
 
 function resetPassword() {
-    if (newPassword.val().length === 8) {
+    if (newPassword.val().length >= 8) {
         let data = {
             'email': $("#reset-email").val(),
             'code': resetCode.val(),
