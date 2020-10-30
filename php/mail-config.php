@@ -1,12 +1,11 @@
 <?php
 # use namespace
+require __DIR__ . "/../vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require "../vendor/autoload.php";
-
 function sendEmail($to, $subject, $message) {
-    $config = json_decode(file_get_contents("./../../mail.json "), true);
+    $config = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT']."/../mail.json"), true);
 
     //PHPMailer Object
     $mail = new PHPMailer(true);

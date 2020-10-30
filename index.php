@@ -1,5 +1,6 @@
 <?php
-include "php/templates.php";
+
+include "./php/templates.php";
 
 session_start();
 
@@ -143,11 +144,10 @@ global $class_name;
                 <small class="form-text">Du erhältst eine E-Mail mit einem Code.</small>
             </div>
             <div class="modal-footer">
-                <button id="reset-reset-btn" type="button" class="btn btn-danger float-right">Passwort zurücketzen</button>
+                <button id="reset-reset-btn" type="button" class="btn btn-danger float-right">Code anfordern</button>
             </div>
         </div>
         <div class="modal-content" id="reset-content2" style="display: none">
-            <!-- TODO add reset code input -->
             <div class="modal-header" role="heading">
                 <h5 role="heading" class="modal-title">Passwort zurücksetzen</h5>
                 <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen"
@@ -158,10 +158,33 @@ global $class_name;
             <div class="modal-body">
                 <p>Ein Verifikationscode wurde nun an <strong id="reset2-strong-mail"></strong> gesendet! Gib diesen nun hier ein.
                 Sieh eventuell auch im Spam-Ordner nach!</p><br>
-                <input class="form-control form-control-lg reset-code" placeholder="123456" maxlength="6" minlength="6">
+                <input class="form-control form-control-lg reset-code" id="reset-code" placeholder="123456" maxlength="6" minlength="6">
+                <small id="reset-code-error" class="form-text" style="color: red;"></small>
             </div>
             <div class="modal-footer">
-                <button id="reset-reset-btn" type="button" class="btn btn-danger float-right">Passwort zurücketzen</button>
+                <button id="reset-verify-btn" type="button" class="btn btn-danger float-right" disabled>Code überprüfen</button>
+            </div>
+        </div>
+        <div class="modal-content" id="reset-content3" style="display: none">
+            <!-- TODO add reset code input -->
+            <div class="modal-header" role="heading">
+                <h5 role="heading" class="modal-title">Passwort zurücksetzen</h5>
+                <button role="button" type="button" class="close" data-dismiss="modal" aria-label="Schliessen"
+                        style="outline: none;">
+                    <span aria-hidden="true" style="outline: none">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Bitte gib nun dein neues Passwort ein, welches mindestens 8 Zeichen lang ist.</p><br>
+                <div class="form-group">
+                    <label for="reset-password">Neues Passwort</label>
+                    <input type="password" class="form-control" id="reset-password"
+                           placeholder="Passwort" autocomplete="new-password">
+                    <small id="reset-password-error" class="form-text" style="color: red;"></small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="reset-password-btn" type="button" class="btn btn-danger float-right" disabled>Passwort zurücksetzen</button>
             </div>
         </div>
     </div>

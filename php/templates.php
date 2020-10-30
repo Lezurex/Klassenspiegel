@@ -1,7 +1,7 @@
 <?php
 
 $class_name = "AP20b";
-$version = "v1.5.0";
+$version = "v1.6.1";
 
 function getNavbar($session) {
     global $class_name;
@@ -11,7 +11,7 @@ function getNavbar($session) {
             <a href="/"><img src="https://tbz.ch/wp-content/themes/tbz/favicons/favicon.ico" alt="icon" height="40px"></a>
         </li>
         <li>
-            <a href="/" class="link-unstyled"><h3 class="h3" id="nav-title">'.$class_name.'</h3></a>
+            <a href="/" class="link-unstyled"><h3 class="h3" id="nav-title">' . $class_name . '</h3></a>
         </li>';
 
     if (!isset($session['email'])) {
@@ -34,7 +34,8 @@ function getNavbar($session) {
     return $navbar;
 }
 
-function getFooter() {
+function getFooter()
+{
     global $version;
     $footer = '
 <div style="height: 50px"></div>
