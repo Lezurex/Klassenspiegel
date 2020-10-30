@@ -1,3 +1,5 @@
+$("#login-email").val(getCookie("email"));
+
 /**
  * Removes error message when changed
  */
@@ -94,6 +96,9 @@ function login() {
             } else if (data == "905") {
                 $("#login-http-error").html("Dein Konto wurde noch nicht freigeschaltet. Wende dich bei einer längeren Wartezeit an den Websiteadministrator.");
             } else if (data == "200") {
+                if ($("#login-remember").get(0).checked) {
+                    setCookie("email", $("#login-email").val(), 30);
+                }
                 window.location.href = "/dashboard/aufgaben";
             } else {
                 $("#login-http-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
@@ -108,4 +113,27 @@ function login() {
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }

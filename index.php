@@ -62,6 +62,10 @@ global $class_name;
                            autocomplete="current-password">
                     <small id="login-error" class="form-text" style="color: red;"></small>
                     <small id="login-http-error" class="form-text" style="color: red;"></small>
+                    <div class="custom-control custom-checkbox mb-3" style="margin-top: 10px">
+                        <input type="checkbox" class="custom-control-input" id="login-remember">
+                        <label class="custom-control-label" for="login-remember">E-Mail merken</label>
+                    </div>
                 </div>
                 <a href="#" id="login-btn-reset">Passwort vergessen?</a>
             </div>
