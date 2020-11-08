@@ -128,6 +128,8 @@ if ($tasks == null) {
                 <option value="Wirtschaft & Recht">Wirtschaft & Recht</option>
                 <option value="Modul 100">Modul 100</option>
                 <option value="Modul 117">Modul 117</option>
+                <option value="Modul 403">Modul 403</option>
+                <option value="Modul 431">Modul 431</option>
             </select><br>
             <select class="form-control" id="task-add-category">
                 <option value="BMS">BMS</option>                
