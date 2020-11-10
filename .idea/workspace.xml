@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Fix password reset length">
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add password reset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/templates.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,6 @@
       <workItem from="1602486741450" duration="13000" />
       <workItem from="1602791362051" duration="3456000" />
       <workItem from="1602831040534" duration="8577000" />
-      <workItem from="1604854833614" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -211,14 +211,7 @@
       <option name="project" value="LOCAL" />
       <updated>1604063546259</updated>
     </task>
-    <task id="LOCAL-00017" summary="Fix password reset length">
-      <created>1604063929504</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1604063929504</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,8 +247,7 @@
     <MESSAGE value="Close #3&#10;Add task list element clickeable" />
     <MESSAGE value="Add E-Mail remember function" />
     <MESSAGE value="Add password reset" />
-    <MESSAGE value="Fix password reset length" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix password reset length" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add password reset" />
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="289" key="#Composer" timestamp="1598648072522">
@@ -321,11 +313,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1604063933273">
+    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1604063552574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598958137223" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1604063933273" />
+    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1604063552574" />
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1598647311967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
