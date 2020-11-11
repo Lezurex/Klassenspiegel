@@ -30,6 +30,7 @@ global $class_name;
 
     <script src="/js/errorResolver.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/darkmode.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 

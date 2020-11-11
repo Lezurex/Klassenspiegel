@@ -60,6 +60,8 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
     <script src="/js/errorResolver.js"></script>
     <script src="/js/edit.js"></script>
     <script src="/js/account.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/darkmode.js"></script>
 </head>
 <body>
 <?php echo getNavbar($_SESSION) ?>
@@ -129,7 +131,7 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
                     </label>
                 </div>
                 <small class="text-success" id="edit-status"></small><br><br>
-                <button type="button" id="btn-edit-save" class="btn btn-success float-right">Speichern</button>
+                <button type="button" id="btn-edit-save" class="btn btn-success float-right inverted">Speichern</button>
             </form>
         </div>
     </div>
@@ -139,7 +141,7 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
             <p>Deine aktuelle E-Mail Adresse lautet: <strong><?php echo $_SESSION['email'] ?></strong>. Du kannst sie
                 hier ändern.</p>
             <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                <button class="btn btn-primary inverted" type="button" data-toggle="collapse"
                         data-target="#account-email-collapse"
                         aria-expanded="false" aria-controls="account-email">
                     E-Mail ändern
@@ -163,14 +165,14 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
                     </div>
                     <br>
 
-                    <button type="button" id="btn-account-email-save" class="btn btn-success float-right" disabled
+                    <button type="button" id="btn-account-email-save" class="btn btn-success float-right inverted" disabled
                             onclick="changeEmail();">Speichern
                     </button>
                 </div>
             </div>
             <br>
             <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                <button class="btn btn-primary inverted" type="button" data-toggle="collapse"
                         data-target="#account-password-collapse"
                         aria-expanded="false" aria-controls="account-password">
                     Passwort ändern
@@ -197,10 +199,14 @@ foreach ($class_list as $value) if ($value['permitted'] == 1) {
                             autocomplete="new-password"><br>
                     <small id="account-password-error" class="text-danger"></small>
                     <small id="account-password-success" class="text-success"></small><br>
-                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right" disabled>
+                    <button type="button" id="btn-account-password-save" class="btn btn-success float-right inverted" disabled>
                         Speichern
                     </button>
                 </div>
+            </div>
+            <div class="custom-control custom-switch" id="switch-darkmode-wrapper">
+                <input type="checkbox" class="custom-control-input" id="switch-darkmode" onclick="toggleDarkModeOnClick()">
+                <label class="custom-control-label" for="switch-darkmode">Dark Mode</label>
             </div>
         </div>
     </div>

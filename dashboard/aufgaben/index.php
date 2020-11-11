@@ -40,7 +40,7 @@ if ($tasks == null) {
 <td>{$task['subject']}</td>";
                 $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
                 $tableContent .= "<td>$date</td>";
-                $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open" value="' . $task['id'] . '">Details</button></td>';
+                $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open inverted" value="' . $task['id'] . '">Details</button></td>';
             }
         }
     }
@@ -71,6 +71,8 @@ if ($tasks == null) {
 
     <script src="/js/errorResolver.js"></script>
     <script src="/js/tasks.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/darkmode.js"></script>
 </head>
 <body>
 

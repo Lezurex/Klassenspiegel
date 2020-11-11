@@ -1,3 +1,13 @@
+/* Dark Mode */
+
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+}
+/* Add class inverted, not invert to elements not to be inverted */
+.invert {
+    filter: invert(1) hue-rotate(180deg);
+}
+
 html, body {
     height: 100%;
     margin: 0;
