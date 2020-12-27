@@ -23,7 +23,7 @@ if ($_SESSION['email'] == "lenny.angst@easyid.ch") {
                 </button>
             </div>
             <div class='modal-body'>
-                <textarea class='form-control' id='task-edit-description' rows='10' placeholder='Beschreibung'>" . $task['description'] . "</textarea><br>
+                <textarea id='task-edit-description'>" . $task['description'] . "</textarea><br>
                 <input type='datetime-local' class='form-control' id='task-edit-date' placeholder='Datum & Uhrzeit' value='$date'><br>
                 <select class='form-control' id='task-edit-subject'>
                 <option value='Mathematik'>Mathematik</option>

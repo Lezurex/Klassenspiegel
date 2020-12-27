@@ -23,5 +23,6 @@ function toggleDarkMode() {
     document.documentElement.classList.toggle('dark-mode');
     document.querySelectorAll('.inverted').forEach((result) => {
         result.classList.toggle('invert');
+        result.classList.toggle("note-color-btn");
     });
 }

@@ -33,6 +33,7 @@ function buildModal(id) {
         success: function (data) {
             $("#modal-task-content").html(data);
             $("#task-edit-subject").val($("#task-edit-subject-id").val());
+            $("#task-edit-description").summernote();
         },
         error: function (xhr, status, error) {
             $("#modal-task-content").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");

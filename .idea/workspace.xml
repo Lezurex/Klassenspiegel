@@ -19,8 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Fix password reset length">
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add DarkMode feature&#10;Close #4">
+      <change beforePath="$PROJECT_DIR$/.idea/Klassenspiegel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Klassenspiegel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/aufgaben/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/aufgaben/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/darkmode.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/darkmode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/getTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/getTask.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +76,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DiscordAPI" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -98,6 +105,9 @@
       <workItem from="1602791362051" duration="3456000" />
       <workItem from="1602831040534" duration="8577000" />
       <workItem from="1604854833614" duration="11000" />
+      <workItem from="1606648379804" duration="24000" />
+      <workItem from="1606648462004" duration="733000" />
+      <workItem from="1609106562565" duration="1319000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -218,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604063929504</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add DarkMode feature&#10;Close #4">
+      <created>1605122993788</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605122993788</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,100 +272,7 @@
     <MESSAGE value="Add E-Mail remember function" />
     <MESSAGE value="Add password reset" />
     <MESSAGE value="Fix password reset length" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix password reset length" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="578" y="289" key="#Composer" timestamp="1598648072522">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="578" y="289" key="#Composer/0.0.1536.824@0.0.1536.824" timestamp="1598648072522" />
-    <state x="395" y="91" key="#Inspections" timestamp="1598536636609">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1598536636609" />
-    <state x="527" y="232" key="#Notifications" timestamp="1598776391051">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="527" y="232" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1598776391051" />
-    <state x="194" y="254" key="#SQL_Dialects" timestamp="1598535023588">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1598535023588" />
-    <state x="256" y="268" key="#SQL_Resolution_Scopes" timestamp="1598536366396">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="256" y="268" key="#SQL_Resolution_Scopes/0.0.1536.824@0.0.1536.824" timestamp="1598536366396" />
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599048633084">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599048633084" />
-    <state x="0" y="197" key="#org.intellij.plugins.intelliLang.inject.config.ui.BaseInjectionDialog" timestamp="1598536878037">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="197" key="#org.intellij.plugins.intelliLang.inject.config.ui.BaseInjectionDialog/0.0.1536.824@0.0.1536.824" timestamp="1598536878037" />
-    <state x="915" y="282" key="FileChooserDialogImpl" timestamp="1602486752233">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599036596571" />
-    <state x="915" y="282" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1602486752233" />
-    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1598537012846">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1598537012846" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1598777115261">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598777115261" />
-    <state x="399" y="166" key="MultipleFileMergeDialog" timestamp="1598777115265">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="399" y="166" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598777115265" />
-    <state x="-1150" y="587" key="NewPhpClassDialog" timestamp="1602791909064">
-      <screen x="-1920" y="360" width="1920" height="1040" />
-    </state>
-    <state x="-1150" y="587" key="NewPhpClassDialog/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1602791909064" />
-    <state x="1007" y="571" key="NewPhpFileDialog" timestamp="1604063092235">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1599052146293" />
-    <state x="-1165" y="784" key="NewPhpFileDialog/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1602845064713" />
-    <state x="1007" y="571" key="NewPhpFileDialog/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1604063092235" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1598776339024">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598776339024" />
-    <state x="618" y="326" key="VCS.ChangelistChooser" timestamp="1598529879007">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="618" y="326" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1598529879007" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2" timestamp="1604063933273">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598958137223" />
-    <state x="602" y="246" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.360.1920.1040@0.0.2560.1400" timestamp="1604063933273" />
-    <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1598647311967">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="640" y="257" key="cloudConfig.SelfSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598647311967" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598905025585">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1598905025585" />
-    <state x="479" y="0" width="577" height="824" key="find.popup" timestamp="1598905006620">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="479" y="0" width="577" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1598905006620" />
-    <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1598529691665">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598529691665" />
-    <state x="-1136" y="645" key="refactoring.ChangeSignatureDialog" timestamp="1602792136359">
-      <screen x="-1920" y="360" width="1920" height="1040" />
-    </state>
-    <state x="-1136" y="645" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.360.1920.1040@-1920.360.1920.1040" timestamp="1602792136359" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598904929205">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598904929205" />
+    <MESSAGE value="Add DarkMode feature&#10;Close #4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add DarkMode feature&#10;Close #4" />
   </component>
 </project>
