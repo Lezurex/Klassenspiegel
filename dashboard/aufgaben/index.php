@@ -30,6 +30,8 @@ if ($tasks == null) {
                     $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
                     $tableContent .= "<td>$date</td>";
                     $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open inverted" value="' . $task['id'] . '">Details</button></td>';
+                } elseif ($task['date'] < (time() - 86400)) {
+                    $db->deleteFromTable("tasks", new Key("id", $task['id']));
                 }
             }
 
@@ -42,6 +44,8 @@ if ($tasks == null) {
                 $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
                 $tableContent .= "<td>$date</td>";
                 $tableContent .= '<td><button type="button" class="btn btn-primary task-btn-open inverted" value="' . $task['id'] . '">Details</button></td>';
+            } elseif ($task['date'] < (time() - 86400)) {
+                $db->deleteFromTable("tasks", new Key("id", $task['id']));
             }
         }
     }

@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Add Summernote editor for creating/editing tasks">
-      <change afterPath="$PROJECT_DIR$/php/config.php" afterDir="false" />
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Change version number">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/aufgaben/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/aufgaben/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/getTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/getTask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/templates.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +72,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DiscordAPI" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -105,7 +110,7 @@
       <workItem from="1606648379804" duration="24000" />
       <workItem from="1606648462004" duration="733000" />
       <workItem from="1609106562565" duration="1319000" />
-      <workItem from="1609107908488" duration="1081000" />
+      <workItem from="1609107908488" duration="2391000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -240,7 +245,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609107968108</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add subject automatically selected when editing task">
+      <created>1609109085009</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609109085009</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Change version number">
+      <created>1609109132042</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1609109132042</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +298,8 @@
     <MESSAGE value="Fix password reset length" />
     <MESSAGE value="Add DarkMode feature&#10;Close #4" />
     <MESSAGE value="Add Summernote editor for creating/editing tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Summernote editor for creating/editing tasks" />
+    <MESSAGE value="Add subject automatically selected when editing task" />
+    <MESSAGE value="Change version number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change version number" />
   </component>
 </project>
