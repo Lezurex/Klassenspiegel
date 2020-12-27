@@ -1,5 +1,6 @@
 <?php
 include "../../php/templates.php";
+include "../../php/config.php";
 require "../../php/database/DatabaseAdapter.php";
 
 session_start();
@@ -111,6 +112,10 @@ if ($tasks == null) {
     <?php
 
     if ($_SESSION['email'] == "lenny.angst@easyid.ch") {
+        $subjectOptions = "";
+        foreach ($config['subjects'] as $subject) {
+            $subjectOptions .= '<option value="' . $subject . '">' . $subject . '</option>';
+        }
         echo '<div class="card">
         <div class="card-header">
             <strong>Aufgabe hinzufügen</strong>
@@ -120,15 +125,7 @@ if ($tasks == null) {
             <textarea id="task-add-description"></textarea><br>
             <input type="datetime-local" class="form-control" id="task-add-date" placeholder="Datum & Uhrzeit"><br>
             <select class="form-control" id="task-add-subject">
-                <option value="Mathematik">Mathematik</option>
-                <option value="Französisch">Französisch</option>
-                <option value="Geschichte & Politik">Geschichte & Politik</option>
-                <option value="Naturwissenschaften & Chemie">Naturwissenschaften & Chemie</option>
-                <option value="Wirtschaft & Recht">Wirtschaft & Recht</option>
-                <option value="Modul 100">Modul 100</option>
-                <option value="Modul 117">Modul 117</option>
-                <option value="Modul 403">Modul 403</option>
-                <option value="Modul 431">Modul 431</option>
+                ' . $subjectOptions . '
             </select><br>
             <select class="form-control" id="task-add-category">
                 <option value="BMS">BMS</option>                

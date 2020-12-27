@@ -32,7 +32,6 @@ function buildModal(id) {
         timeout:5000,
         success: function (data) {
             $("#modal-task-content").html(data);
-            $("#task-edit-subject").val($("#task-edit-subject-id").val());
             $("#task-edit-description").summernote();
         },
         error: function (xhr, status, error) {

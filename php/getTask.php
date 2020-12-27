@@ -1,5 +1,6 @@
 <?php
 
+include "config.php";
 require "database/DatabaseAdapter.php";
 
 session_start();
@@ -15,6 +16,13 @@ $task = $db->getStringsFromTable("tasks", new Key("id", $_POST['id']));
 $date = date("j. n. Y", $task['date']) . ' um ' . date('G:i', $task['date']);
 
 if ($_SESSION['email'] == "lenny.angst@easyid.ch") {
+    $subjectOptions = "";
+    foreach ($config['subjects'] as $subject) {
+        if ($task['subject'] == $subject)
+            $subjectOptions .= '<option value="' . $subject . '" selected>' . $subject . '</option>';
+        else
+            $subjectOptions .= '<option value="' . $subject . '">' . $subject . '</option>';
+    }
     $date = date('Y-m-d', $task['date']) . "T" . date('H:i', $task['date']);
     $exit = "<div class='modal-header'>
                 <input class='form-control form-control-lg modal-header' id='task-edit-title' type='text' placeholder='Titel' value='" . $task['title'] . "'>
@@ -26,13 +34,7 @@ if ($_SESSION['email'] == "lenny.angst@easyid.ch") {
                 <textarea id='task-edit-description'>" . $task['description'] . "</textarea><br>
                 <input type='datetime-local' class='form-control' id='task-edit-date' placeholder='Datum & Uhrzeit' value='$date'><br>
                 <select class='form-control' id='task-edit-subject'>
-                <option value='Mathematik'>Mathematik</option>
-                <option value='Französisch'>Französisch</option>
-                <option value='Geschichte & Politik'>Geschichte & Politik</option>
-                <option value='Naturwissenschaften & Chemie'>Naturwissenschaften & Chemie</option>
-                <option value='Wirtschaft & Recht'>Wirtschaft & Recht</option>
-                <option value='Modul 100'>Modul 100</option>
-                <option value='Modul 117'>Modul 117</option>
+                    $subjectOptions
             </select><br>";
     switch ($task['category']) {
         case "BMS":
