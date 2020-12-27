@@ -1,7 +1,7 @@
 <?php
 
 $class_name = "AP20b";
-$version = "v1.7.0";
+$version = "v1.8.0";
 
 function getNavbar($session) {
     global $class_name;
