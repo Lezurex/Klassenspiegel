@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Change version number">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/aufgaben/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/aufgaben/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/templates.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/templates.php" afterDir="false" />
-    </list>
+    <list default="true" id="e41aba37-1e58-40c6-8dcf-a19f7e02d9ad" name="Default Changelist" comment="Too old tasks get deleted automatically" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +106,7 @@
       <workItem from="1606648379804" duration="24000" />
       <workItem from="1606648462004" duration="733000" />
       <workItem from="1609106562565" duration="1319000" />
-      <workItem from="1609107908488" duration="2391000" />
+      <workItem from="1609107908488" duration="2852000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1598529840969</created>
@@ -259,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609109132042</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Too old tasks get deleted automatically">
+      <created>1609110452050</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609110452050</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +303,7 @@
     <MESSAGE value="Add Summernote editor for creating/editing tasks" />
     <MESSAGE value="Add subject automatically selected when editing task" />
     <MESSAGE value="Change version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change version number" />
+    <MESSAGE value="Too old tasks get deleted automatically" />
+    <option name="LAST_COMMIT_MESSAGE" value="Too old tasks get deleted automatically" />
   </component>
 </project>
