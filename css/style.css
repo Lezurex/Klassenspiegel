@@ -77,3 +77,7 @@ html, body {
     margin: 0 auto;
     text-align: center;
 }
+
+.note-editor .note-toolbar .note-color-palette div .note-color-btn, .note-popover .popover-content .note-color-palette div .note-color-btn {
+    filter: invert(1) hue-rotate(180deg);
+}
