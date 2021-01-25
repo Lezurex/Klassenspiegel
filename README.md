@@ -14,3 +14,5 @@ Aktuell gibt es
 - ein Login
 - eine Liste der Klasse
 - ein Aufgabensystem, womit die ganze Klasse die anstehenden Hausaufgaben und Prüfungen einsehen kann.
+- Dark Mode
+- WYSIWYG-Editor für den Administrator
