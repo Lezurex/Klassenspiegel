@@ -40,6 +40,11 @@ function buildModal(id) {
     let data = {
         'id':id,
     };
+    $("#modal-task-content").html("<div class='modal-body'><div class=\"d-flex justify-content-center\">\n" +
+        "  <div class=\"spinner-border\" role=\"status\">\n" +
+        "    <span class=\"sr-only\">Loading...</span>\n" +
+        "  </div>\n" +
+        "</div></div>");
     $.ajax({
         method:"POST",
         url: window.location.origin + "/php/getTask.php",
