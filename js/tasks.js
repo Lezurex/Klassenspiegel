@@ -1,25 +1,40 @@
 $().ready(function () {
-    $(".task-btn-open").each(function () {
-        $(this).on("click", function (e) {
-            e.preventDefault();
-            buildModal($(this).val())
-            $("#modal-task").modal("show");
-        });
-    });
-
-    $(".task-element").each(function () {
-        $(this).on("click", function (e) {
-            e.preventDefault();
-            buildModal($(this).data("id"))
-            $("#modal-task").modal("show");
-        });
-    });
-
     $("#task-add-btn").on("click", function (e) {
         e.preventDefault();
         addTask();
     })
+
+    updateTable();
+    setInterval(updateTable, 1000 * 60);
 });
+
+function updateTable() {
+    $.ajax({
+        method:"POST",
+        url: window.location.origin + "/php/getTable.php",
+        timeout:5000,
+        success: function (data) {
+            $("#tasks-table-body").html(data);
+            $(".task-btn-open").each(function () {
+                $(this).on("click", function (e) {
+                    e.preventDefault();
+                    buildModal($(this).val())
+                    $("#modal-task").modal("show");
+                });
+            });
+
+            $(".task-element").each(function () {
+                $(this).on("click", function (e) {
+                    e.preventDefault();
+                    buildModal($(this).data("id"))
+                    $("#modal-task").modal("show");
+                });
+            });
+        },
+        error: function (xhr, status, error) {
+        }
+    })
+}
 
 function buildModal(id) {
     let data = {
@@ -58,6 +73,7 @@ function addTask() {
         success: function (data) {
             if (data == "200") {
                 $("#task-add-success").html("Die Aufgabe wurde erfolgreich hinzugefügt!");
+                updateTable();
             } else
                 $("#task-add-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
         },
@@ -86,6 +102,7 @@ function editTask() {
         success: function (data) {
             if (data == "200") {
                 $("#task-edit-success").html("Die Aufgabe wurde erfolgreich gespeichert!");
+                updateTable();
             } else
                 $("#task-edit-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
         },
