@@ -78,7 +78,7 @@ function changeEmail() {
     };
     $.ajax({
         method: "POST",
-        url: "https://" + window.location.hostname + "/php/changeEmail.php",
+        url: window.location.origin + "/php/changeEmail.php",
         data: queryData,
         timeout: 5000,
         success: function (data) {

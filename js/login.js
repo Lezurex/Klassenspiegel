@@ -85,7 +85,7 @@ function login() {
     };
     $.ajax({
         method: "POST",
-        url: "https://" + window.location.hostname + "/php/login.php",
+        url: window.location.origin + "/php/login.php",
         data: data,
         timeout: 5000,
         success: function (data) {

@@ -83,7 +83,7 @@ function register() {
     };
     $.ajax({
         method:"POST",
-        url:"https://" + window.location.hostname + "/php/register.php",
+        url: window.location.origin + "/php/register.php",
         data: data,
         timeout:5000,
         success: function (data) {

@@ -50,7 +50,7 @@ function edit() {
     };
     $.ajax({
         method:"POST",
-        url:"https://" + window.location.hostname + "/php/edit.php",
+        url: window.location.origin + "/php/edit.php",
         data: data,
         timeout:5000,
         success: function (data) {

@@ -27,7 +27,7 @@ function buildModal(id) {
     };
     $.ajax({
         method:"POST",
-        url:"https://" + window.location.hostname + "/php/getTask.php",
+        url: window.location.origin + "/php/getTask.php",
         data: data,
         timeout:5000,
         success: function (data) {
@@ -52,7 +52,7 @@ function addTask() {
     };
     $.ajax({
         method:"POST",
-        url:"https://" + window.location.hostname + "/php/addTask.php",
+        url: window.location.origin + "/php/addTask.php",
         data: data,
         timeout:5000,
         success: function (data) {

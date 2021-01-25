@@ -31,7 +31,7 @@ function requestCode() {
 
         $.ajax({
             method: "POST",
-            url: "https://" + window.location.hostname + "/php/reset/send.php",
+            url: window.location.origin + "/php/reset/send.php",
             data: data,
             timeout: 5000,
             success: function (data) {
@@ -84,7 +84,7 @@ function verifyCode() {
 
         $.ajax({
             method: "POST",
-            url: "https://" + window.location.hostname + "/php/reset/verify.php",
+            url: window.location.origin + "/php/reset/verify.php",
             data: data,
             timeout: 5000,
             success: function (data) {
@@ -132,7 +132,7 @@ function resetPassword() {
 
         $.ajax({
             method: "POST",
-            url: "https://" + window.location.hostname + "/php/reset/reset.php",
+            url: window.location.origin + "/php/reset/reset.php",
             data: data,
             timeout: 5000,
             success: function (data) {
