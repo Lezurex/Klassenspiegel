@@ -11,3 +11,12 @@ $config['subjects'] = array(
     "Modul 403",
     "Modul 431"
 );
+
+$config['schools'] = array(
+    "TBZ",
+    "BMS"
+);
+
+$config['default_schools'] = array(
+    "TBZ"
+);

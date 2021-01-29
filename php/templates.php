@@ -40,7 +40,7 @@ function getFooter()
     $footer = '
 <div style="height: 50px"></div>
 <footer class="page-footer font-small" style="">
-  <div class="footer-copyright text-center py-3 footer">© 2020 Lenny Angst
+  <div class="footer-copyright text-center py-3 footer">© 2021 Lenny Angst
     • <a href="https://github.com/Lezurex" target="_blank">GitHub</a>
     • <a href="https://github.com/Lezurex/Klassenspiegel/issues/new/choose" target="_blank">Bug melden/Feature vorschlagen</a>
     • ' . $version . '
