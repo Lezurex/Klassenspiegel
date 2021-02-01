@@ -8,8 +8,8 @@ $config['subjects'] = array(
     "Geschichte & Politik",
     "Naturwissenschaften & Chemie",
     "Wirtschaft & Recht",
-    "Modul 403",
-    "Modul 431"
+    "Modul 104",
+    "Modul 114"
 );
 
 $config['schools'] = array(
