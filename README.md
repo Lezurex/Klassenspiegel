@@ -16,3 +16,10 @@ Aktuell gibt es
 - ein Aufgabensystem, womit die ganze Klasse die anstehenden Hausaufgaben und Prüfungen einsehen kann.
 - Dark Mode
 - WYSIWYG-Editor für den Administrator
+
+### App
+Zu dieser Website gibt es ebenfals eine App mit dazugehöriger API. Diese Android App lässt sich [hier](https://github.com/Lezurex/Klassenportal-Android) einsehen.
+
+## Zu diesem Projekt beitragen
+Falls du zu diesem Projet etwas beitragen möchtest, nimm dir ein Issue vor und bearbeite dies und stelle danach eine Pull Request.
+Beachte auch den Fortschritt im Projekt General, um zu sehen, was derzeit schon bearbeitet wird.
