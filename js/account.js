@@ -86,7 +86,7 @@ function changeEmail() {
             if (data == "902") {
                 $("#account-email-error").html("Du benutzt schon diese E-Mail.");
             } else if (data == "200") {
-                $("#account-email-success").html("Eine Bestätigungsmail von <strong>klasseap20b@gmail.com</strong> wurde an die Adresse <strong>" + queryData.email + "</strong> gesendet. Schau eventuell auch im Spam-Ordner nach.");
+                $("#account-email-success").html("Eine Bestätigungsmail von <strong>noreply@lezurex.com</strong> wurde an die Adresse <strong>" + queryData.email + "</strong> gesendet. Schau eventuell auch im Spam-Ordner nach.");
             } else {
                 $("#account-email-error").html("Es ist ein Fehler aufgetreten. Versuche es später noch einmal.");
             }
