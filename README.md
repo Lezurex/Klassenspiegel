@@ -17,6 +17,10 @@ Aktuell gibt es
 - Dark Mode
 - WYSIWYG-Editor für den Administrator
 
+**In Arbeit**
+- Mehr Anpassbarkeit
+- Aufgaben für jeden Benutzer abhäkelbar (To-Do-Liste)
+
 ### App
 Zu dieser Website gibt es ebenfals eine App mit dazugehöriger API. Diese Android App lässt sich [hier](https://github.com/Lezurex/Klassenportal-Android) einsehen.
 
