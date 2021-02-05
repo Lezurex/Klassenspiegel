@@ -29,14 +29,15 @@ if (!isset($_SESSION['email'])) {
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="https://tbz.ch/wp-content/themes/tbz/favicons/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
     <script src="/js/errorResolver.js"></script>
-    <script src="/js/tasks.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/darkmode.js"></script>
+    <script src="/js/tasks.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 <body>
 

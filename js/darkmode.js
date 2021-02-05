@@ -1,3 +1,5 @@
+var isFirefox = typeof InstallTrigger !== 'undefined';
+
 $(document).ready(function () {
     if (getCookie("darkmode") !== "") {
         if (getCookie("darkmode") === "true") {
@@ -11,18 +13,32 @@ $(document).ready(function () {
 
 function toggleDarkModeOnClick() {
     if (document.getElementById("switch-darkmode").checked) {
-        toggleDarkMode();
         setCookie("darkmode", "true", 365);
-    } else {
         toggleDarkMode();
+    } else {
         setCookie("darkmode", "false", 365);
+        toggleDarkMode();
+    }
+
+    if (isFirefox) {
+        if (getCookie("darkmode") === "false")
+            document.querySelector("body").style.backgroundColor = "inherit";
+        else
+            document.querySelector("body").style.backgroundColor = "black";
     }
 }
 
 function toggleDarkMode() {
     document.documentElement.classList.toggle('dark-mode');
-    document.querySelectorAll('.inverted').forEach((result) => {
+
+    document.querySelectorAll('.inverted, .note-color-btn').forEach((result) => {
         result.classList.toggle('invert');
-        result.classList.toggle("note-color-btn");
     });
+
+    if (isFirefox) {
+        if (getCookie("darkmode") === "false")
+            document.querySelector("body").style.backgroundColor = "inherit";
+        else
+            document.querySelector("body").style.backgroundColor = "black";
+    }
 }

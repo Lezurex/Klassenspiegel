@@ -8,23 +8,23 @@ function getNavbar($session) {
     $navbar = '<nav id="navbar">
     <ul class="list-unstyled">
         <li>
-            <a href="/"><img class="inverted" src="https://tbz.ch/wp-content/themes/tbz/favicons/favicon.ico" alt="icon" height="40px"></a>
+            <a href="/" class="inverted"><img src="https://tbz.ch/wp-content/themes/tbz/favicons/favicon.ico" alt="icon" height="40px"></a>
         </li>
         <li>
             <a href="/" class="link-unstyled"><h3 class="h3" id="nav-title">' . $class_name . '</h3></a>
         </li>';
 
     if (!isset($session['email'])) {
-        $navbar .= '<li class="float-right"><a><button type="button" class="btn btn-primary inverted" data-toggle="modal" data-target="#modal-login" id="btn-login">
+        $navbar .= '<li class="float-right"><a><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login" id="btn-login">
     Login
         </button></a>';
     } else
         $navbar .= '
-<li><a href="/dashboard/aufgaben">Aufgaben</a></li>
-<li class="float-right"><a href="/dashboard"><button type="button" class="btn btn-primary inverted" id="btn-login">
+<li><a href="/dashboard/aufgaben" class="inverted">Aufgaben</a></li>
+<li class="float-right inverted"><a href="/dashboard"><button type="button" class="btn btn-primary" id="btn-login">
     Dashboard
     </button></a></li>
-    <li class="float-right"><a href="/php/logout.php"><button type="button" class="btn btn-danger inverted">
+    <li class="float-right inverted"><a href="/php/logout.php"><button type="button" class="btn btn-danger">
     Ausloggen
     </button></a>';
 

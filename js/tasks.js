@@ -15,8 +15,11 @@ function updateTable() {
         timeout:5000,
         success: function (data) {
             $("#tasks-table-body").html(data);
+            let darkmode = getCookie("darkmode");
             $(".task-btn-open").each(function () {
                 $(this).on("click", function (e) {
+                    if (darkmode === "true")
+                        $(this).classList.add("invert");
                     e.preventDefault();
                     buildModal($(this).val())
                     $("#modal-task").modal("show");
