@@ -101,7 +101,7 @@ function editTask() {
     };
     $.ajax({
         method:"POST",
-        url:"https://" + window.location.hostname + "/php/editTask.php",
+        url: window.location.origin + "/php/editTask.php",
         data: data,
         timeout:5000,
         success: function (data) {

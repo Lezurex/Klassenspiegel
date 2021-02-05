@@ -107,7 +107,7 @@ function changePassword() {
     };
     $.ajax({
         method: "POST",
-        url: "https://" + window.location.hostname + "/php/changePassword.php",
+        url: window.location.origin + "/php/changePassword.php",
         data: queryData,
         timeout: 5000,
         success: function (data) {
