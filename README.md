@@ -19,6 +19,8 @@ Aktuell gibt es
 
 **In Arbeit**
 - Mehr Anpassbarkeit
+- Voll benutzerdefinierte Fächer
+- Benutzerdefinierte Gruppen
 - Aufgaben für jeden Benutzer abhäkelbar (To-Do-Liste)
 
 ### App
