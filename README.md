@@ -9,6 +9,8 @@ Die Idee dazu ist in einer Unterrichtsstunde des Modules 100 entstanden, als ich
 digital erfassen musste. Dies habe ich dann mit PHP und einer Datenbank gemacht. Seitdem habe ich immer wieder an 
 diesem Projekt weitergearbeitet.
 
+**Dieses Projekt wird demnächst generalüberholt!**
+
 ## Funktionen
 Aktuell gibt es
 - ein Login
