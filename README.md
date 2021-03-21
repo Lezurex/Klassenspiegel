@@ -9,7 +9,7 @@ Die Idee dazu ist in einer Unterrichtsstunde des Modules 100 entstanden, als ich
 digital erfassen musste. Dies habe ich dann mit PHP und einer Datenbank gemacht. Seitdem habe ich immer wieder an 
 diesem Projekt weitergearbeitet.
 
-**Dieses Projekt wird demnächst generalüberholt!**
+**Dieses Projekt wird generalüberholt! Die neue Repository findet sich [hier](https://github.com/Lezurex/openclass).**
 
 ## Funktionen
 Aktuell gibt es
