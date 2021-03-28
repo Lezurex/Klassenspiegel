@@ -19,7 +19,7 @@ Aktuell gibt es
 - Dark Mode
 - WYSIWYG-Editor für den Administrator
 
-**In Arbeit**
+**In Arbeit** ([in einer neuen Repo](https://github.com/Lezurex/openclass))
 - Mehr Anpassbarkeit
 - Voll benutzerdefinierte Fächer
 - Benutzerdefinierte Gruppen
