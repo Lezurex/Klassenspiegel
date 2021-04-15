@@ -1,5 +1,7 @@
 # Website der Klasse AP20b
 
+> Völlig neu entwickelte und anpassabarere Version [hier](https://github.com/Lezurex/openclass).
+
 Dies ist der Source-Code des Webportals der Klasse AP20b an der TBZ.<br>
 Aktuell ist dieses System nicht anpassbar, jedoch darf dies gerne als Inspiration genutzt werden.<br>
 Eine aktuelle Version ist [hier](https://ap20b.lezurex.com/) einsehbar.
